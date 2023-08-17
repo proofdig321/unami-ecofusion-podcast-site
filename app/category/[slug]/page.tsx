@@ -28,6 +28,7 @@ type Props = {
       const query = groq`*[_type == "category" && slug.current == $slug ] {
         title,
         description,
+        image,
       }[0]`;
       const clientFetch = cache(client.fetch.bind(client));
       const tags = await clientFetch<Page>(query, { slug });
@@ -42,7 +43,7 @@ type Props = {
         openGraph: {
           title: tags.title,
           description: tags.description,
-          url: process.env.SITE_URL + "/",
+          url: process.env.SITE_URL + "/category/" + slug,
           images: [
             {
               url: 'https://podcast-green-mu.vercel.app/og.png',
