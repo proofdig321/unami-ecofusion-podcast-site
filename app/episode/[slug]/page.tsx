@@ -37,35 +37,18 @@ export const revalidate = 60;
         return {
           title: "Not Found",
           description: "The page you are looking for does not exist.",
-          coverArt: "https://podcast-green-mu.vercel.app/default-image.jpg",
-          
         };
-        return {
-          title: post.title,
-          description: post.description,
-          openGraph: {
-            title: post.title,
-            description: post.description,
-            url: process.env.SITE_URL + "/episode/" + slug,
-            coverArt: [
-              {
-                url: 'https://podcast-green-mu.vercel.app/episode/' + post.coverArt,
-                width: 800,
-                height: 600,
-              },
-              {
-                url: 'https://podcast-green-mu.vercel.app/og-alt.png',
-                width: 1800,
-                height: 1600,
-                alt: 'My custom alt',
-              },
-            ],
-            locale: 'en_US',
-            type: 'website',
-          },
-        
-        };
+      return {
+        title: post.title,
+        description: post.description,
+        // Use the image URL from the fetched data
+        image: post.coverArt?.asset.url || "", // Use the coverArt URL from the fetched data
+      // Add the 'og:image' tag to the metadata
+      meta: [
+        { property: "og:image", content: post.coverArt?.asset.url || "" },
+      ],
       
+      };
     } catch (error) {
       console.error(error);
       return {
