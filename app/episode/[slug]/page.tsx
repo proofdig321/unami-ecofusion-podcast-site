@@ -37,7 +37,7 @@ export const revalidate = 60;
         return {
           title: "Not Found",
           description: "The page you are looking for does not exist.",
-          coverArt: "https://podcast-green-mu.vercel.app/default-image.jpg",
+          coverArt: "https://podcast-green-mu.vercel.app/episode/" + post.coverArt,
         };
         return {
           title: post.title,
@@ -45,10 +45,10 @@ export const revalidate = 60;
           openGraph: {
             title: post.title,
             description: post.description,
-            url: process.env.SITE_URL + "/",
+            url: process.env.SITE_URL + "/episode/" + slug,
             images: [
               {
-                url: 'https://podcast-green-mu.vercel.app/og.png',
+                url: 'https://podcast-green-mu.vercel.app/episode/' + post.coverArt,
                 width: 800,
                 height: 600,
               },
