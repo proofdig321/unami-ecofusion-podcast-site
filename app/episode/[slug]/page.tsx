@@ -21,7 +21,7 @@ type Props = {
 export const revalidate = 60;
 
 
-
+{/*
 export async function generateMetadata({ params: { slug } }: Props) {
   try {
   const query = groq`*[_type=="episode" && slug.current == $slug][0]  {
@@ -51,8 +51,8 @@ export async function generateMetadata({ params: { slug } }: Props) {
   }
 }
 
+*/}
 
-{/*
 export async function generateMetadata({ params: { slug } }: Props) {
   try {
     const query = groq`*[_type=="episode" && slug.current == $slug][0]  {
@@ -68,7 +68,8 @@ export async function generateMetadata({ params: { slug } }: Props) {
         title: "Not Found",
         description: "The page you are looking for does not exist.",
         // Add a default image URL if no episode is found
-        image: "https://example.com/default-image.jpg",
+        image: "https://podcast-green-mu.vercel.app/episode/episode.png"
+        
       };
     return {
       title: post.title,
@@ -82,12 +83,12 @@ export async function generateMetadata({ params: { slug } }: Props) {
       title: "Not Found",
       description: "The page you are looking for does not exist.",
       // Add a default image URL for error cases
-      image: "https://example.com/default-image.jpg",
+      image: "https://podcast-green-mu.vercel.app/episode/episode.png",
     };
   }
 }
 
-*/}
+
 // 
 export async function generateStaticParams() {
   const query = groq`*[__type == "episode"]
