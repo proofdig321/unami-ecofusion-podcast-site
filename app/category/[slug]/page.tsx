@@ -45,12 +45,12 @@ type Props = {
           url: process.env.SITE_URL + "/",
           images: [
             {
-              url: 'https://nextjs.org/og.png',
+              url: 'https://podcast-green-mu.vercel.app/og.png',
               width: 800,
               height: 600,
             },
             {
-              url: 'https://nextjs.org/og-alt.png',
+              url: 'https://podcast-green-mu.vercel.app/og-alt.png',
               width: 1800,
               height: 1600,
               alt: 'My custom alt',
