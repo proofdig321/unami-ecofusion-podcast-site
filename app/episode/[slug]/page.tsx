@@ -22,41 +22,37 @@ export const revalidate = 60;
 
 
 
-  export async function generateMetadata({ params: { slug } }: Props) {
-    try {
-    const query = groq`*[_type=="episode" && slug.current == $slug][0]  {
-      title,
-      description,
-      coverArt
-
-    }`;
-    
-    const clientFetch = cache(client.fetch.bind(client));
-    const post = await clientFetch(query, { slug });
-      if (!post)
-        return {
-          title: "Not Found",
-          description: "The page you are looking for does not exist.",
-        };
-      return {
-        title: post.title,
-        description: post.description,
-        // Use the image URL from the fetched data
-        image: post.coverArt?.asset.url || "", // Use the coverArt URL from the fetched data
-      // Add the 'og:image' tag to the metadata
-      meta: [
-        { property: "og:image", content: post.coverArt?.asset.url || "" },
-      ],
-      
-      };
-    } catch (error) {
-      console.error(error);
+export async function generateMetadata({ params: { slug } }: Props) {
+  try {
+  const query = groq`*[_type=="episode" && slug.current == $slug][0]  {
+    title,
+    description,
+    coverArt, // Add the imageUrl field to the query
+  }`;
+  
+  const clientFetch = cache(client.fetch.bind(client));
+  const post = await clientFetch(query, { slug });
+    if (!post)
       return {
         title: "Not Found",
         description: "The page you are looking for does not exist.",
       };
-    }
+    return {
+      title: post.title,
+      description: post.description,
+      // Use the image URL from the fetched data
+      image: post.coverArt,
+      
+    
+    };
+  } catch (error) {
+    console.error(error);
+    return {
+      title: "Not Found",
+      description: "The page you are looking for does not exist.",
+    };
   }
+}
 
 
 {/*
