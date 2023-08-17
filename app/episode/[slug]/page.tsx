@@ -27,7 +27,6 @@ export async function generateMetadata({ params: { slug } }: Props) {
   const query = groq`*[_type=="episode" && slug.current == $slug][0]  {
     title,
     description,
-    coverArt, // Add the imageUrl field to the query
   }`;
   
   const clientFetch = cache(client.fetch.bind(client));
@@ -40,9 +39,7 @@ export async function generateMetadata({ params: { slug } }: Props) {
     return {
       title: post.title,
       description: post.description,
-      // Use the image URL from the fetched data
-      image: post.coverArt,
-      
+
     
     };
   } catch (error) {
