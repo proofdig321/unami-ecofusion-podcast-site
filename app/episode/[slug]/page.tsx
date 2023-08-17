@@ -37,7 +37,7 @@ export const revalidate = 60;
         return {
           title: "Not Found",
           description: "The page you are looking for does not exist.",
-          coverArt: "https://podcast-green-mu.vercel.app/episode/" + post.coverArt,
+          coverArt: "https://podcast-green-mu.vercel.app/episode/",
         };
         return {
           title: post.title,
@@ -48,7 +48,7 @@ export const revalidate = 60;
             url: process.env.SITE_URL + "/episode/" + slug,
             images: [
               {
-                url: 'https://podcast-green-mu.vercel.app/episode/' + post.coverArt,
+                url: 'https://podcast-green-mu.vercel.app/episode/',
                 width: 800,
                 height: 600,
               },
