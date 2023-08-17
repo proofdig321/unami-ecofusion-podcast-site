@@ -35,30 +35,30 @@ const Hero = () => {
             <div className="flex flex-row justify-center items-center gap-4 md:gap-8">
               <div className=" pt-16 sm:pt-20 md:pt-36 flex flex-col gap-6 w-24 sm:w-44 md:w-52">
                 <div className="relative">
-                  <Image src='https://images.pexels.com/photos/9383917/pexels-photo-9383917.jpeg?auto=compress&cs=tinysrgb&w=600' alt='hero' className="object-cover aspect-[2/3] rounded-lg w-full" width={170} height={264}  />
+                  <Image src='https://globalgoalscms.co.uk/wp-content/uploads/2021/11/resources1.jpg?auto=compress&cs=tinysrgb&w=600' alt='hero' className="object-cover aspect-[2/3] rounded-lg w-full" width={170} height={264}  />
                 </div>
                 <div className="relative">
-                  <Image src='https://images.pexels.com/photos/6953925/pexels-photo-6953925.jpeg?auto=compress&cs=tinysrgb&w=600' alt='hero' className="object-cover aspect-[2/3] rounded-lg w-full" width={170} height={264}  />
+                  <Image src='https://globalgoalscms.co.uk/wp-content/uploads/2021/11/resources13.jpg?auto=compress&cs=tinysrgb&w=600' alt='hero' className="object-cover aspect-[2/3] rounded-lg w-full" width={170} height={264}  />
                 </div>
               </div>
 
 
               <div className="flex flex-col gap-6 w-24 sm:w-44 md:w-52">
                 <div className="relative">
-                  <Image src='https://images.pexels.com/photos/6883821/pexels-photo-6883821.jpeg?auto=compress&cs=tinysrgb&w=600' alt='hero' className="object-cover aspect-[2/3] rounded-lg w-full" width={170} height={264} />
+                  <Image src='https://globalgoalscms.co.uk/wp-content/uploads/2021/11/resources2.jpg?auto=compress&cs=tinysrgb&w=600' alt='hero' className="object-cover aspect-[2/3] rounded-lg w-full" width={170} height={264} />
                 </div>
                 <div className="relative">
-                  <Image src='https://images.pexels.com/photos/7383471/pexels-photo-7383471.jpeg?auto=compress&cs=tinysrgb&w=600' alt='hero'  className="object-cover aspect-[2/3] rounded-lg w-full" width={170} height={264} />
+                  <Image src='https://globalgoalscms.co.uk/wp-content/uploads/2021/11/resources3.jpg?auto=compress&cs=tinysrgb&w=600' alt='hero'  className="object-cover aspect-[2/3] rounded-lg w-full" width={170} height={264} />
                 </div>
               </div>
 
 
               <div className="flex flex-col gap-6 w-24 sm:w-44 md:w-52 pt-16 sm:pt-20 md:pt-32">
                 <div className="relative">
-                  <Image src='https://images.pexels.com/photos/7586540/pexels-photo-7586540.jpeg?auto=compress&cs=tinysrgb&w=600' alt='hero'  className="object-cover aspect-[2/3] rounded-lg w-full" width={170} height={264} />
+                  <Image src='https://globalgoalscms.co.uk/wp-content/uploads/2021/11/resources4.jpg?auto=compress&cs=tinysrgb&w=600' alt='hero'  className="object-cover aspect-[2/3] rounded-lg w-full" width={170} height={264} />
                 </div>
                 <div className="relative">
-                  <Image src='https://images.pexels.com/photos/7229063/pexels-photo-7229063.jpeg?auto=compress&cs=tinysrgb&w=600' alt='hero' className="object-cover aspect-[2/3] rounded-lg w-full" width={170} height={264} />
+                  <Image src='https://globalgoalscms.co.uk/wp-content/uploads/2021/11/resources5.jpg?auto=compress&cs=tinysrgb&w=600' alt='hero' className="object-cover aspect-[2/3] rounded-lg w-full" width={170} height={264} />
                 </div>
               </div>
             </div>
