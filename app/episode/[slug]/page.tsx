@@ -21,38 +21,45 @@ type Props = {
 export const revalidate = 60;
 
 
-{/*
-export async function generateMetadata({ params: { slug } }: Props) {
-  try {
-  const query = groq`*[_type=="episode" && slug.current == $slug][0]  {
-    title,
-    description,
-  }`;
-  
-  const clientFetch = cache(client.fetch.bind(client));
-  const post = await clientFetch(query, { slug });
-    if (!post)
+
+  export async function generateMetadata({ params: { slug } }: Props) {
+    try {
+    const query = groq`*[_type=="episode" && slug.current == $slug][0]  {
+      title,
+      description,
+      imageUrl, // Add the imageUrl field to the query
+
+    }`;
+    
+    const clientFetch = cache(client.fetch.bind(client));
+    const post = await clientFetch(query, { slug });
+      if (!post)
+        return {
+          title: "Not Found",
+          description: "The page you are looking for does not exist.",
+        };
+      return {
+        title: post.title,
+        description: post.description,
+        // Use the image URL from the fetched data
+        image: post.imageUrl?.asset.url || "", // Use the coverArt URL from the fetched data
+      // Add the 'og:image' tag to the metadata
+      meta: [
+        { property: "og:image", content: post.imageurl?.asset.url || "" },
+      ],
+      
+      };
+    } catch (error) {
+      console.error(error);
       return {
         title: "Not Found",
         description: "The page you are looking for does not exist.",
       };
-    return {
-      title: post.title,
-      description: post.description,
-
-    
-    };
-  } catch (error) {
-    console.error(error);
-    return {
-      title: "Not Found",
-      description: "The page you are looking for does not exist.",
-    };
+    }
   }
-}
 
-*/}
 
+{/*
 export async function generateMetadata({ params: { slug } }: Props) {
   try {
     const query = groq`*[_type=="episode" && slug.current == $slug][0]  {
@@ -68,8 +75,7 @@ export async function generateMetadata({ params: { slug } }: Props) {
         title: "Not Found",
         description: "The page you are looking for does not exist.",
         // Add a default image URL if no episode is found
-        image: "https://podcast-green-mu.vercel.app/episode/episode.png"
-        
+        image: "https://example.com/default-image.jpg",
       };
     return {
       title: post.title,
@@ -83,12 +89,12 @@ export async function generateMetadata({ params: { slug } }: Props) {
       title: "Not Found",
       description: "The page you are looking for does not exist.",
       // Add a default image URL for error cases
-      image: "https://podcast-green-mu.vercel.app/episode/episode.png",
+      image: "https://example.com/default-image.jpg",
     };
   }
 }
 
-
+*/}
 // 
 export async function generateStaticParams() {
   const query = groq`*[__type == "episode"]
