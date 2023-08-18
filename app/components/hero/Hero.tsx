@@ -13,7 +13,7 @@ const Hero = () => {
       <Image src='/sui.png' alt='flower' width={80} height={80} className="object-contain absolute top-1/2 left-[700px] hodden md:flex" />
 
       <Container>
-        <div className="flex flex-col justify-between items-center md:flex-row gap-8 gap-y-12 pb-8 pt-8">
+        <div className="flex flex-col justify-between items-center md:flex-row gap-8 gap-y-12 pb-8 pt-16">
           <div className="max-w-[800px]">
             <h1 className="text-[2.25rem] md:text-6xl font-extrabold py-4">
               Sustainability spotlight  
