@@ -38,7 +38,7 @@ const Hero = () => {
                   <Image src='https://images.pexels.com/photos/9324322/pexels-photo-9324322.jpeg?auto=compress&cs=tinysrgb&w=400' alt='hero' className="object-cover aspect-[2/3] rounded-lg w-full" width={170} height={264}  />
                 </div>
                 <div className="relative">
-                  <Image src='https://images.pexels.com/photos/6953925/pexels-photo-6953925.jpeg\?auto=compress&cs=tinysrgb&w=600' alt='hero' className="object-cover aspect-[2/3] rounded-lg w-full" width={170} height={264}  />
+                  <Image src='https://images.pexels.com/photos/6136094/pexels-photo-6136094.jpeg?auto=compress&cs=tinysrgb&w=400' alt='hero' className="object-cover aspect-[2/3] rounded-lg w-full" width={170} height={264}  />
                 </div>
               </div>
 
@@ -55,10 +55,10 @@ const Hero = () => {
 
               <div className="flex flex-col gap-6 w-24 sm:w-44 md:w-52 pt-16 sm:pt-20 md:pt-32">
                 <div className="relative">
-                  <Image src='https://images.pexels.com/photos/7586540/pexels-photo-7586540.jpeg?auto=compress&cs=tinysrgb&w=600' alt='hero'  className="object-cover aspect-[2/3] rounded-lg w-full" width={170} height={264} />
+                  <Image src='https://images.pexels.com/photos/3782134/pexels-photo-3782134.jpeg?auto=compress&cs=tinysrgb&w=400' alt='hero'  className="object-cover aspect-[2/3] rounded-lg w-full" width={170} height={264} />
                 </div>
                 <div className="relative">
-                  <Image src='https://images.pexels.com/photos/7229063/pexels-photo-7229063.jpeg?auto=compress&cs=tinysrgb&w=600' alt='hero' className="object-cover aspect-[2/3] rounded-lg w-full" width={170} height={264} />
+                  <Image src='https://media.istockphoto.com/id/1465159922/photo/environmental-technology-concept-ocean-resources-sustainable-development-goals-sdgs-elements.jpg?b=1&s=612x612&w=0&k=20&c=raWgYYq6wjV42-MH5SOCIdP9EasAxqIHl8VV0MxInXY=400' alt='hero' className="object-cover aspect-[2/3] rounded-lg w-full" width={170} height={264} />
                 </div>
               </div>
             </div>
