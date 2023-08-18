@@ -35,7 +35,7 @@ const Hero = () => {
             <div className="flex flex-row justify-center items-center gap-4 md:gap-8">
               <div className=" pt-16 sm:pt-20 md:pt-36 flex flex-col gap-6 w-24 sm:w-44 md:w-52">
                 <div className="relative">
-                  <Image src='https://globalgoalscms.co.uk/wp-content/uploads/2021/11/resources1.jpg?auto=compress&cs=tinysrgb&w=600' alt='hero' className="object-cover aspect-[2/3] rounded-lg w-full" width={170} height={264}  />
+                  <Image src='https://images.pexels.com/photos/9324322/pexels-photo-9324322.jpeg?auto=compress&cs=tinysrgb&w=400' alt='hero' className="object-cover aspect-[2/3] rounded-lg w-full" width={170} height={264}  />
                 </div>
                 <div className="relative">
                   <Image src='https://images.pexels.com/photos/6953925/pexels-photo-6953925.jpeg\?auto=compress&cs=tinysrgb&w=600' alt='hero' className="object-cover aspect-[2/3] rounded-lg w-full" width={170} height={264}  />
