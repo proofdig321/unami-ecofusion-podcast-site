@@ -25,8 +25,7 @@ const Hero = () => {
             <br />
             <p>
             Step into our sustainable haven, where you can seamlessly discover and immerse yourself in your treasured eco-friendly podcasts. Whether you're an eco-conscious enthusiast or taking your first steps into the world of sustainable content, we offer a nourishing feast of audio experiences that cater to your sustainability spotlight.
-            
-            </p>
+           </p>
             <br />
             <div className="flex flex-col md:flex-row md:items-center gap-4">
               
