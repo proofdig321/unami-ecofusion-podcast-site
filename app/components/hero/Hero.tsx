@@ -17,14 +17,15 @@ const Hero = () => {
           <div className="max-w-[800px]">
             <h1 className="text-[2.25rem] md:text-6xl font-extrabold py-4">
               Find and listen to your favorite ecofriendly:
-              <span className="before:block before:absolute before:-inset-1 before:-skew-y-3 m-4 before:bg-white relative inline-block">
+              {/* <span className="before:block before:absolute before:-inset-1 before:-skew-y-3 m-4 before:bg-white relative inline-block">
                 <span className="relative text-primary flex items-center gap-4 text-[2.25rem] md:text-6xl">Podcasts <IoMdPulse /> </span>
-              </span> 
+              </span> */}
               <div className={`${s.clip} mt-6 bg-white text-primary  w-fit  px-4 p-2 flex items-center gap-4`}>Podcasts <IoMdPulse /> </div>
             </h1>
             <br />
             <p>
-            Welcome to our platform, where you can effortlessly find and immerse yourself in your favorite podcasts. Whether you are a devoted listener or just starting to explore the vast podcasting landscape, we have everything you need to quench your audio cravings.
+            Step into our sustainable haven, where you can seamlessly discover and immerse yourself in your treasured eco-friendly podcasts. Whether you're an eco-conscious enthusiast or taking your first steps into the world of sustainable content, we offer a nourishing feast of audio experiences that cater to your sustainability spotlight.
+            
             </p>
             <br />
             <div className="flex flex-col md:flex-row md:items-center gap-4">
