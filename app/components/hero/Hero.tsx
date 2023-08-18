@@ -15,7 +15,7 @@ const Hero = () => {
       <Container>
         <div className="flex flex-col justify-between items-center md:flex-row gap-8 gap-y-12 pb-8 pt-16">
           <div className="max-w-[800px]">
-            <h1 className="text-[2.25rem] md:text-6xl font-extrabold py-4">
+            <h1 className="text-[2.20rem] md:text-6xl font-extrabold py-4">
               Sustainability spotlight  
               {/* <span className="before:block before:absolute before:-inset-1 before:-skew-y-3 m-4 before:bg-white relative inline-block">
                 <span className="relative text-primary flex items-center gap-4 text-[2.25rem] md:text-6xl">Podcasts <IoMdPulse /> </span>
