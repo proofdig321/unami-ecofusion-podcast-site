@@ -16,7 +16,7 @@ const Hero = () => {
         <div className="flex flex-col justify-between items-center md:flex-row gap-8 gap-y-12 pb-8 pt-16">
           <div className="max-w-[800px]">
             <h1 className="text-[2.25rem] md:text-6xl font-extrabold py-4">
-              Find and listen to your favorite 
+            Embark on a sustainable audio journey by discovering and tuning in to your favored eco-friendly 
               {/* <span className="before:block before:absolute before:-inset-1 before:-skew-y-3 m-4 before:bg-white relative inline-block">
                 <span className="relative text-primary flex items-center gap-4 text-[2.25rem] md:text-6xl">Podcasts <IoMdPulse /> </span>
               </span> */}
@@ -24,7 +24,7 @@ const Hero = () => {
             </h1>
             <br />
             <p>
-            Welcome to our platform, where you can effortlessly find and immerse yourself in your favorite podcasts. Whether you are a devoted listener or just starting to explore the vast podcasting landscape, we have everything you need to quench your audio cravings.
+            Step into our sustainable haven, where you can seamlessly discover and immerse yourself in your treasured eco-friendly podcasts. Whether you're an eco-conscious enthusiast or taking your first steps into the world of sustainable content, we offer a nourishing feast of audio experiences that cater to your sustainability spotlight.
             </p>
             <br />
             <div className="flex flex-col md:flex-row md:items-center gap-4">
@@ -58,7 +58,7 @@ const Hero = () => {
                   <Image src='https://images.pexels.com/photos/3782134/pexels-photo-3782134.jpeg?auto=compress&cs=tinysrgb&w=400' alt='hero'  className="object-cover aspect-[2/3] rounded-lg w-full" width={170} height={264} />
                 </div>
                 <div className="relative">
-                  <Image src='https://media.istockphoto.com/id/1465159922/photo/environmental-technology-concept-ocean-resources-sustainable-development-goals-sdgs-elements.jpg?b=1&s=612x612&w=0&k=20&c=raWgYYq6wjV42-MH5SOCIdP9EasAxqIHl8VV0MxInXY=400' alt='hero' className="object-cover aspect-[2/3] rounded-lg w-full" width={170} height={264} />
+                  <Image src='https://images.pexels.com/photos/9324375/pexels-photo-9324375.jpeg?auto=compress&cs=tinysrgb&w=400' alt='hero' className="object-cover aspect-[2/3] rounded-lg w-full" width={170} height={264} />
                 </div>
               </div>
             </div>
