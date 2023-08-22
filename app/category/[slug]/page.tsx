@@ -1,4 +1,3 @@
-
 import React, { Suspense, cache } from 'react'
 import  { groq} from 'next-sanity'
 import { client } from '@/sanity/lib/client';
@@ -10,7 +9,6 @@ import Loader from '@/app/components/loader/Loader';
 import Heading from '@/app/components/Heading';
 import ClientOnly from '@/app/components/ClientOnly';
 import { Page } from '@/app/type/types';
-import category from '@/sanity/schemas/category';
 
 
 type Props = {
@@ -28,7 +26,6 @@ type Props = {
       const query = groq`*[_type == "category" && slug.current == $slug ] {
         title,
         description,
-        image,
       }[0]`;
       const clientFetch = cache(client.fetch.bind(client));
       const tags = await clientFetch<Page>(query, { slug });
@@ -40,26 +37,6 @@ type Props = {
       return {
         title: tags.title,
         description: tags.description,
-        openGraph: {
-          title: tags.title,
-          description: tags.description,
-          url: process.env.SITE_URL + "/category/" + slug,
-          images: [
-            {
-              url: 'https://podcast-green-mu.vercel.app/og.png',
-              width: 800,
-              height: 600,
-            },
-            {
-              url: 'https://podcast-green-mu.vercel.app/og-alt.png',
-              width: 1800,
-              height: 1600,
-              alt: 'My custom alt',
-            },
-          ],
-          locale: 'en_US',
-          type: 'website',
-        },
       
       };
     } catch (error) {
@@ -107,9 +84,10 @@ const Categorypage = async ({ params: { slug } }: Props) => {
       }[0]`;
       const clientFetch = cache(client.fetch.bind(client));
       const tags = await clientFetch<Page>(query, { slug });
-      // for (const key in tags) {
-      //   console.log('Key:', key);
-      // }
+      for (const key in tags) {
+        console.log('Key:', key);
+      }
+      console.log('epidode:', tags?.episodes);
       const posts = tags?.episodes || []
 
 
