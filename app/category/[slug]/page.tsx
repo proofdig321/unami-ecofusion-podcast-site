@@ -3,11 +3,8 @@ import  { groq} from 'next-sanity'
 import { client } from '@/sanity/lib/client';
 import EpisodeContainer from '@/app/episodes/EpisodeContainer';
 import CategoryHero from '../CategoryHero';
-import Container from '@/app/components/Container';
 import Checkmate from '@/app/components/Checkmate';
 import Loader from '@/app/components/loader/Loader';
-import Heading from '@/app/components/Heading';
-import ClientOnly from '@/app/components/ClientOnly';
 import { Page } from '@/app/type/types';
 
 
