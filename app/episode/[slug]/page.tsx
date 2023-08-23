@@ -26,9 +26,19 @@ export const revalidate = 60;
     const query = groq`*[_type=="episode" && slug.current == $slug][0]  {
       title,
       description,
-      coverArt
-
+      coverArt {
+        asset {
+          url
+          metadata {
+            dimensions {
+              width,
+              height
+            }
+          }
+        }
+      }
     }`;
+
     
     const clientFetch = cache(client.fetch.bind(client));
     const post = await clientFetch(query, { slug });
