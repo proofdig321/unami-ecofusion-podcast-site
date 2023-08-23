@@ -1,4 +1,3 @@
-
 import { client } from "@/sanity/lib/client";
 import { groq } from "next-sanity";
 import { cache } from "react";
@@ -22,61 +21,61 @@ export const revalidate = 60;
 
 
 
-export async function generateMetadata({ params: { slug } }: Props) {
-  try {
-  const query = groq`*[_type=="episode" && slug.current == $slug][0]  {
-    title,
-    description,
-    coverArt
+  export async function generateMetadata({ params: { slug } }: Props) {
+    try {
+    const query = groq`*[_type=="episode" && slug.current == $slug][0]  {
+      title,
+      description,
+      coverArt
 
-  }`;
-  
-  const clientFetch = cache(client.fetch.bind(client));
-  const post = await clientFetch(query, { slug });
-    if (!post)
+    }`;
+    
+    const clientFetch = cache(client.fetch.bind(client));
+    const post = await clientFetch(query, { slug });
+      if (!post)
+        return {
+          title: "Not Found",
+          description: "The page you are looking for does not exist.",
+        };
+      return {
+        title: post.title,
+        description: post.description,
+        // Use the image URL from the fetched data
+        image: post.coverArt?.asset.url || "https://onlinejpgtools.com/images/examples-onlinejpgtools/mouse.jpg", // Use the coverArt URL from the fetched data
+        openGraph: {
+          title: post.title,
+          description: post.description,
+          url: process.env.SITE_URL,
+          images: [
+            {
+              url: post.coverArt?.asset.url || "https://onlinejpgtools.com/images/examples-onlinejpgtools/mouse.jpg",
+              width: 800,
+              height: 600,
+            },
+            {
+              url: 'https://onlinejpgtools.com/images/examples-onlinejpgtools/mouse.jpg',
+              width: 1800,
+              height: 1600,
+              alt: 'My custom alt',
+            },
+          ],
+          locale: 'en_US',
+          type: 'website',
+        },
+      // Add the 'og:image' tag to the metadata
+      meta: [
+        { property: "og:image", content: post.coverArt?.asset.url || "" },
+      ],
+      
+      };
+    } catch (error) {
+      console.error(error);
       return {
         title: "Not Found",
         description: "The page you are looking for does not exist.",
       };
-    return {
-      title: post.title,
-      description: post.description,
-      // Use the image URL from the fetched data
-      image: post.coverArt?.asset.url || "https://onlinejpgtools.com/images/examples-onlinejpgtools/mouse.jpg", // Use the coverArt URL from the fetched data
-      openGraph: {
-        title: post.title,
-        description: post.description,
-        url: process.env.SITE_URL,
-        images: [
-          {
-            url: post.coverArt?.asset.url || "https://onlinejpgtools.com/images/examples-onlinejpgtools/mouse.jpg",
-            width: 800,
-            height: 600,
-          },
-          {
-            url: 'https://onlinejpgtools.com/images/examples-onlinejpgtools/mouse.jpg',
-            width: 1800,
-            height: 1600,
-            alt: 'My custom alt',
-          },
-        ],
-        locale: 'en_US',
-        type: 'website',
-      },
-    // Add the 'og:image' tag to the metadata
-    meta: [
-      { property: "og:image", content: post.coverArt?.asset.url || "" },
-    ],
-    
-    };
-  } catch (error) {
-    console.error(error);
-    return {
-      title: "Not Found",
-      description: "The page you are looking for does not exist.",
-    };
+    }
   }
-}
 
 
 {/*
