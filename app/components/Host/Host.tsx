@@ -4,24 +4,11 @@ import Image from "next/image"
 import Container from "../Container"
 import Heading from "../Heading"
 import { hostData } from "../data/data"
-import { groq } from "next-sanity"
-
 
 import s from './Host.module.css'
 import { AiFillLinkedin, AiFillTwitterCircle, AiOutlineFacebook, AiOutlineInstagram } from "react-icons/ai"
 import { CiMicrophoneOn } from "react-icons/ci"
 
-const hostQuery = groq`
-      *[_type == 'host']{
-      name,
-      picture,
-      ...,
-      }
-
-  const posts = await client.fetch(query);
-  const hosts = await client.fetch(hostQuery);
-  const filterhosts = hosts.filter((host: any, index: number) => index < 4)
-    
 
 const Host = () => {
   return (
@@ -31,14 +18,14 @@ const Host = () => {
 
             <div className="flex flex-wrap justify-center items-center gap-12 py-8">
                 {
-                    hostData.map((post, i) => (
+                    hostData.map((item, i) => (
                         <div key={i} className="flex flex-col justify-center items-center relative">
                             <div className={s.circle}>
-                                <Image src={post.image} alt="host" className="" width={300} height={300}  />
+                                <Image src={item.image} alt="host" className="" width={300} height={300}  />
                             </div>
                             <div className="absolute bottom-12 text-white text-2xl md:text-4xl font-bold my-4">
                                 <h1>
-                                {post.name}
+                                {item.name}
                                 </h1>
                             </div>
                             <div className="flex flex-row gap-2 items-center mt-4">
