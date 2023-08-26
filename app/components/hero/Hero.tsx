@@ -16,7 +16,7 @@ const Hero = () => {
         <div className="flex flex-col justify-between items-center md:flex-row gap-8 gap-y-12 pb-8 pt-16">
           <div className="max-w-[800px]">
             <h1 className="text-[2.20rem] md:text-6xl font-extrabold py-4">
-              Sustainability spotlight  
+              Unami EcoFusion  
               {/* <span className="before:block before:absolute before:-inset-1 before:-skew-y-3 m-4 before:bg-white relative inline-block">
                 <span className="relative text-primary flex items-center gap-4 text-[2.25rem] md:text-6xl">Podcasts <IoMdPulse /> </span>
               </span> */}
@@ -24,7 +24,7 @@ const Hero = () => {
             </h1>
             <br />
             <p>
-            Welcome to our podcast network, where you can effortlessly find and immerse yourself in your favorite eco-friendly podcasts. Whether you are a devoted listener or just starting to explore the vast podcasting landscape, we have everything you need to quench your audio cravings.
+            Welcome to Unami EcoFusion Podcast Blog, where you can effortlessly find and immerse yourself in your favorite eco-friendly podcasts. Whether you are a devoted listener or just starting to explore the vast podcasting landscape, we have everything you need to quench your audio cravings.
             </p>
             <br />
             <div className="flex flex-col md:flex-row md:items-center gap-4">
