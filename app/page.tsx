@@ -36,6 +36,8 @@ export default async function  Home(){
         ...,
       }
    `
+   
+   
 
   const posts = await client.fetch(query);
   const categories = await client.fetch(categoryQuery);
