@@ -64,7 +64,6 @@ export const revalidate = 60;
           locale: 'en_US',
           type: 'website',
           fbAppId: '651424070289695',
-          "og:image": post.coverArt?.asset.url || "",
           
 
 
