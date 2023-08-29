@@ -8,7 +8,7 @@ import ClientOnly from '../components/ClientOnly'
 
 export const metadata = {
   title: "About Us",
-  description: "Unami Podcast is your gateway to a world of inspiration, creativity, and discovery. Join us on this immersive audio experience as we uncover the extraordinary stories, passions, and artistry that shape our lives. Tune in and let your senses come alive with Unami Podcast.",
+  description: "Unami EcoFusion Podcast Blog is your gateway to a world of inspiration, creativity, and discovery. Join us on this immersive audio experience as we uncover the extraordinary stories, passions, and artistry that shape our lives. Tune in and let your senses come alive with Unami Podcast.",
   
 };
 

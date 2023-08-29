@@ -15,10 +15,10 @@ const inter = Inter({ subsets: ['latin'] })
 export const metadata: Metadata = {
   metadataBase: new URL("https://podcast-proofdig321.vercel.app"),
   title: {
-    default: "Unami EcoFusion Blog",
-    template: `%s | Unami EcoFusion Blog`,
+    default: "Unami EcoFusion Podcast Blog",
+    template: `%s | Unami EcoFusion Podcast Blog`,
   },
-  description: "A blog that promotes and amplifies podcasts created by underrepresented voices. It can highlight podcasts produced by marginalized communities, featuring a diverse range of perspectives and stories from independant content creators who seeks sponsorships and market access.",
+  description: "An ecofriendly podcast blog that promotes sustainability and amplifies podcasts created by underrepresented voices. We highlight podcasts produced by marginalized communities and corporates, featuring a diverse range of perspectives and stories from independant content creators who seeks sponsorships and market access.",
   verification: {
     google: "",
   },
