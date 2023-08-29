@@ -20,7 +20,7 @@ export const metadata: Metadata = {
   },
   description: "An ecofriendly podcast blog that promotes sustainability and amplifies podcasts created by underrepresented voices. We highlight podcasts produced by marginalized communities and corporates, featuring a diverse range of perspectives and stories from independant content creators who seeks sponsorships and market access.",
   verification: {
-    google: "",
+    google: "" ,
   },
 };
 
