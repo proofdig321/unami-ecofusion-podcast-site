@@ -78,7 +78,7 @@ const Categorypage = async ({ params: { slug } }: Props) => {
           publishedAt,
           ...,
         }
-      }[0]`;
+      }[10]`;
       const clientFetch = cache(client.fetch.bind(client));
       const tags = await clientFetch<Page>(query, { slug });
       for (const key in tags) {
