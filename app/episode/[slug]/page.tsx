@@ -63,6 +63,8 @@ export const revalidate = 60;
           ],
           locale: 'en_US',
           type: 'website',
+          "fb:app_id": process.env.FB_APP_ID,
+
         },
       // Add the 'og:image' tag to the metadata
       meta: [

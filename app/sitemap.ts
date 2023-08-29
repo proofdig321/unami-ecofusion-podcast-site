@@ -7,7 +7,7 @@ import { getAllPosts } from "@/lib/getData"; // Adjust the path based on your ac
 //import getAllCategories from "@/lib/getAllCategories";
 
 export default async function sitemap() {
-  const baseUrl = "http://localhost:3000";
+  const baseUrl = "https://www.unamipodcast.site";
 
   // Get All Posts from CMS
   const postGenerator = getAllPosts();
@@ -65,7 +65,7 @@ interface Category {
 }
 
 export default async function sitemap() {
-  const baseUrl = "https://podcast-proofdig321.vercel.app/";
+  const baseUrl = "https://www.unamipodcast.site";
 
   // Get All Categories from CMS
   const categories = await getAllCategories();
