@@ -65,7 +65,7 @@ interface Category {
 }
 
 export default async function sitemap() {
-  const baseUrl = "https://www.unamipodcast.site";
+  const baseUrl = "https://unamipodcast.site";
 
   // Get All Categories from CMS
   const categories = await getAllCategories();
