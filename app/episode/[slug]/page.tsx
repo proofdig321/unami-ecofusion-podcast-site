@@ -24,58 +24,51 @@ export const revalidate = 60;
 
 export async function generateMetadata({ params: { slug } }: Props) {
   try {
-    const query = groq`*[_type == "episode" && slug.current == $slug][0] {
-      title,
-      description,
-      coverArt {
-        asset {
-          url
-          metadata {
-            dimensions {
-              width,
-              height
-            }
-          }
-        }
-      }
-    }`;
+  const query = groq`*[_type=="episode" && slug.current == $slug][0]  {
+    title,
+    description,
+    coverArt
 
-    const clientFetch = cache(client.fetch.bind(client));
-    const post = await clientFetch(query, { slug });
-    
-    if (!post) {
+  }`;
+  
+  const clientFetch = cache(client.fetch.bind(client));
+  const post = await clientFetch(query, { slug });
+    if (!post)
       return {
         title: "Not Found",
         description: "The page you are looking for does not exist.",
       };
-    }
-    
-    const imageWidth = post.coverArt?.asset.metadata.dimensions.width || 800;
-    const imageHeight = post.coverArt?.asset.metadata.dimensions.height || 600;
-
     return {
       title: post.title,
       description: post.description,
       // Use the image URL from the fetched data
-      image: post.coverArt?.asset.url || "https://onlinejpgtools.com/images/examples-onlinejpgtools/mouse.jpg",
+      image: post.coverArt?.asset.url || "https://mobisoftinfotech.com/resources/wp-content/uploads/2022/04/next-JS-framework.png", // Use the coverArt URL from the fetched data
       openGraph: {
         title: post.title,
         description: post.description,
         url: process.env.SITE_URL,
         images: [
           {
-            url: post.coverArt?.asset.url || "https://onlinejpgtools.com/images/examples-onlinejpgtools/mouse.jpg",
-            width: imageWidth,
-            height: imageHeight,
+            url: post.coverArt?.asset.url,
+            width: 800,
+            height: 600,
+          },
+          {
+            url: 'https://mobisoftinfotech.com/resources/wp-content/uploads/2022/04/next-JS-framework.png',
+            width: 1800,
+            height: 1600,
+            alt: 'My custom alt',
           },
         ],
         locale: 'en_US',
         type: 'website',
+        fbAppId: '651424070289695',
       },
-      meta: [
-        // Add the 'og:image' tag to the metadata
-        { property: "og:image", content: post.coverArt?.asset.url || "" },
-      ],
+    // Add the 'og:image' tag to the metadata
+    meta: [
+      { property: "og:image", content: post.coverArt?.asset.url || "" },
+    ],
+    
     };
   } catch (error) {
     console.error(error);
@@ -85,7 +78,6 @@ export async function generateMetadata({ params: { slug } }: Props) {
     };
   }
 }
-
 
 {/*
   export async function generateMetadata({ params: { slug } }: Props) {
