@@ -76,7 +76,7 @@ const RichTextComponents = ({ content }) => {
   );
 };
 
-export default RichTextComponent;
+export default RichTextComponents;
 
 
 {/*
