@@ -65,7 +65,7 @@ export async function generateMetadata({ params: { slug } }: Props) {
       openGraph: {
         title: post.title,
         description: post.description,
-        url: `https://${process.env.SITE_URL}/episode/${slug}`,
+        url: `https:www.unamipodcast.site/episode/${slug}`,
         images: [
           {
             url: coverArtUrl,
