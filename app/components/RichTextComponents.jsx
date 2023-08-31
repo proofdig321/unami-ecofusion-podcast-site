@@ -1,17 +1,13 @@
 'use client'
 
-import React from 'react';
 import getYouTubeId from 'get-youtube-id';
 import LiteYouTubeEmbed from 'react-lite-youtube-embed';
 import 'react-lite-youtube-embed/dist/LiteYouTubeEmbed.css';
-import { PortableText, serializers as defaultSerializers } from '@portabletext/react';
 import Image from 'next/image';
 import Link from 'next/link';
 import urlFor from '../../sanity/lib/urlFor';
 import React from 'react';
 import { PortableText, serializers as defaultSerializers } from '@portabletext/react';
-import Image from 'next/image';
-import Link from 'next/link';
 import urlFor from '../../sanity/lib/urlFor';
 
 const RichTextComponent = ({ content }) => {
