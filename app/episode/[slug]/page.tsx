@@ -174,7 +174,7 @@ export async function generateMetadata({ params: { slug } }: Props) {
     };
   }
 }
-*/}
+
  
 export async function generateStaticParams() {
   const query = groq`*[__type == "episode"]
