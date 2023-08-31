@@ -22,7 +22,7 @@ type Props = {
 
 export const revalidate = 60;
 
-{/*
+
 export async function generateMetadata({ params: { slug } }: Props) {
   try {
     const query = groq`*[_type=="episode" && slug.current == $slug][0] {
@@ -116,8 +116,8 @@ export async function generateMetadata({ params: { slug } }: Props) {
     };
   }
 }
-*/}
 
+{/*
 export async function generateMetadata({ params: { slug } }: Props) {
   try {
   const query = groq`*[_type=="episode" && slug.current == $slug][0]  {
@@ -174,7 +174,7 @@ export async function generateMetadata({ params: { slug } }: Props) {
     };
   }
 }
-
+*/}
  
 export async function generateStaticParams() {
   const query = groq`*[__type == "episode"]

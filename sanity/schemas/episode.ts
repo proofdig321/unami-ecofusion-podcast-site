@@ -110,7 +110,7 @@ export default defineType ({
     {
       name: 'imageUrl',
       title: 'Cover',
-      type: 'string'
+      type: 'image'
     },
   ],
   preview: {
