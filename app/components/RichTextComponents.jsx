@@ -9,7 +9,7 @@ import urlFor from '../../sanity/lib/urlFor';
 import React from 'react';
 import { PortableText, serializers as defaultSerializers } from '@portabletext/react';
 
-const RichTextComponent = ({ content }) => {
+const RichTextComponents = ({ content }) => {
   const RichTextComponents = {
     types: {
       image: ({ value }) => {
