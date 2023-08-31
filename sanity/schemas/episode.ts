@@ -102,11 +102,31 @@ export default defineType ({
         Rule.max(3)
           .unique()
     },
-    {
+    
+
+  {
       name: 'coverArt',
-      title: 'Cover art',
-      type: 'image'
+      title: 'Cover Art',
+      type: 'image',
+      options: {
+        hotspot: true // Enable hotspot for image cropping
+      },
+      fields: [
+        {
+          name: 'alt',
+          type: 'text',
+          title: 'Alt Text',
+          description: 'Alternative text for accessibility',
+          options: {
+            isHighlighted: true // Show the field directly in the main object fieldset
+          }
+        }
+      ],
+      validation: (Rule) => Rule.required().error('Cover Art is required')
     },
+    // other fields...
+  
+
     {
       name: 'imageUrl',
       title: 'Cover',
