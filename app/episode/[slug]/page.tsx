@@ -12,7 +12,8 @@ import RelatedEpisodes from "../RelatedEpisodes";
 import AudioPlayer from "@/app/episodes/AudioPlayer";
 import { Metadata } from 'next';
 import episode from "@/sanity/schemas/episode";
-const util = require('util')
+const util = require('util');
+
 
 type Props = {
   params: {

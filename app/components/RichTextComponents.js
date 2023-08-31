@@ -1,8 +1,58 @@
 'use client'
+
 import Image from 'next/image';
 import Link from 'next/link';
 import urlFor from '../../sanity/lib/urlFor'
 
+import React from 'react';
+import getYouTubeId from 'get-youtube-id';
+import LiteYouTubeEmbed from 'react-lite-youtube-embed';
+import 'react-lite-youtube-embed/dist/LiteYouTubeEmbed.css';
+import { PortableText, serializers as defaultSerializers } from '@portabletext/react';
+import Image from 'next/image';
+import Link from 'next/link';
+import urlFor from '../../sanity/lib/urlFor';
+
+const CustomSerializers = {
+  ...defaultSerializers,
+  types: {
+    ...defaultSerializers.types,
+    youtube: ({ node }) => {
+      const { url } = node;
+      const id = getYouTubeId(url);
+      return <LiteYouTubeEmbed id={id} />;
+    },
+  },
+};
+
+const CustomMarks = {
+  ...defaultSerializers.marks,
+  link: ({ children, mark }) => {
+    const { href } = mark;
+
+    const rel = !href.startsWith('/')
+      ? 'noopener noreferrer'
+      : undefined;
+
+    return (
+      <Link href={href} rel={rel} className="underline decoration-[#8F00FF] hover:decoration-black">
+        {children}
+      </Link>
+    );
+  },
+};
+
+export default function RichTextComponents({ blocks }) {
+  return (
+    <PortableText
+      blocks={blocks}
+      serializers={CustomSerializers}
+      marks={CustomMarks}
+    />
+  );
+}
+
+{/*
 export const RichTextComponents = {
     types: {
       image: ({ value }: any) => {
@@ -67,3 +117,4 @@ export const RichTextComponents = {
     },
   };
   export default RichTextComponents;
+*/}
