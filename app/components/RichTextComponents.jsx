@@ -8,7 +8,6 @@ import Link from 'next/link';
 import urlFor from '../../sanity/lib/urlFor';
 import React from 'react';
 import { PortableText, serializers as defaultSerializers } from '@portabletext/react';
-import urlFor from '../../sanity/lib/urlFor';
 
 const RichTextComponent = ({ content }) => {
   const RichTextComponents = {
