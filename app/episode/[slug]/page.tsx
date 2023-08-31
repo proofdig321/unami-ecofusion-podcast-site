@@ -11,6 +11,7 @@ import { Page } from "@/app/type/types";
 import RelatedEpisodes from "../RelatedEpisodes";
 import AudioPlayer from "@/app/episodes/AudioPlayer";
 import { Metadata } from 'next';
+import episode from "@/sanity/schemas/episode";
 const util = require('util')
 
 type Props = {
@@ -20,6 +21,8 @@ type Props = {
 };
 
 export const revalidate = 60;
+
+{/*
 export async function generateMetadata({ params: { slug } }: Props) {
   try {
     const query = groq`*[_type=="episode" && slug.current == $slug][0] {
@@ -113,8 +116,8 @@ export async function generateMetadata({ params: { slug } }: Props) {
     };
   }
 }
+*/}
 
-{/*
 export async function generateMetadata({ params: { slug } }: Props) {
   try {
   const query = groq`*[_type=="episode" && slug.current == $slug][0]  {
@@ -139,7 +142,7 @@ export async function generateMetadata({ params: { slug } }: Props) {
       openGraph: {
         title: post.title,
         description: post.description,
-        url: process.env.SITE_URL,
+        url: `https:www.unamipodcast.site/episode/${slug}`,
         images: [
           {
             url: post.coverArt?.asset.url,
