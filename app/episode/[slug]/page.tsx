@@ -15,6 +15,7 @@ import episode from "@/sanity/schemas/episode";
 const util = require('util');
 
 
+
 type Props = {
   params: {
     slug: string;
@@ -22,7 +23,101 @@ type Props = {
 };
 
 export const revalidate = 60;
+export async function generateMetadata({ params: { slug } }: Props) {
+  try {
+    const query = groq`*[_type=="episode" && slug.current == $slug][0] {
+      title,
+      description,
+      coverArt
+    }`;
 
+    const clientFetch = cache(client.fetch.bind(client));
+    const post = await clientFetch(query, { slug });
+
+    if (!post) {
+      return {
+        title: "Not Found",
+        description: "The page you are looking for does not exist.",
+        openGraph: {
+          title: "Not Found",
+          description: "The page you are looking for does not exist.",
+          url: process.env.SITE_URL,
+          type: "website",
+          images: [
+            {
+              url: "https://example.com/default-image.jpg",
+              width: 800,
+              height: 600,
+            },
+          ],
+          locale: "en_US",
+          fbAppId: "651424070289695",
+        },
+        meta: [
+          { property: "og:image", content: "" },
+        ],
+      };
+    }
+
+    const coverArtUrl = post.coverArt?.asset.url || "https://example.com/default-image.jpg";
+
+    return {
+      title: post.title,
+      description: post.description,
+      image: coverArtUrl,
+      openGraph: {
+        title: post.title,
+        description: post.description,
+        url: `https:www.unamipodcast.site/episode/${slug}`,
+        images: [
+          {
+            url: coverArtUrl,
+            width: 800,
+            height: 600,
+          },
+          {
+            url: "https://example.com/default-image.jpg",
+            width: 1800,
+            height: 1600,
+            alt: "My custom alt",
+          },
+        ],
+        locale: "en_US",
+        type: "website",
+        fbAppId: "651424070289695",
+      },
+      meta: [
+        { property: "og:image", content: coverArtUrl },
+      ],
+    };
+  } catch (error) {
+    console.error(error);
+    return {
+      title: "Not Found",
+      description: "The page you are looking for does not exist.",
+      openGraph: {
+        title: "Not Found",
+        description: "The page you are looking for does not exist.",
+        url: process.env.SITE_URL,
+        type: "website",
+        images: [
+          {
+            url: "https://example.com/default-image.jpg",
+            width: 800,
+            height: 600,
+          },
+        ],
+        locale: "en_US",
+        fbAppId: "651424070289695",
+      },
+      meta: [
+        { property: "og:image", content: "" },
+      ],
+    };
+  }
+}
+
+{/* use this for metadata
 
 export async function generateMetadata({ params: { slug } }: Props) {
   try {
@@ -117,6 +212,8 @@ export async function generateMetadata({ params: { slug } }: Props) {
     };
   }
 }
+*/}
+
 
 {/*
 export async function generateMetadata({ params: { slug } }: Props) {

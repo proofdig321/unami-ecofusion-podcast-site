@@ -18,14 +18,14 @@ const Host = () => {
 
             <div className="flex flex-wrap justify-center items-center gap-12 py-8">
                 {
-                    hostData.map((host, i) => (
+                    hostData.map((hosts, i) => (
                         <div key={i} className="flex flex-col justify-center items-center relative">
                             <div className={s.circle}>
-                                <Image src={host.image} alt="host" className="" width={300} height={300}  />
+                                <Image src={hosts.image} alt="host" className="" width={300} height={300}  />
                             </div>
                             <div className="absolute bottom-12 text-white text-2xl md:text-4xl font-bold my-4">
                                 <h1>
-                                {host.name}
+                                {hosts.name}
                                 </h1>
                             </div>
                             <div className="flex flex-row gap-2 items-center mt-4">
