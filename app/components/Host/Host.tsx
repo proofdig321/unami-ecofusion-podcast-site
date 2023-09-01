@@ -14,18 +14,18 @@ const Host = () => {
   return (
     <div className="py-16 bg-pink">
         <Container>
-            <Heading title="meet our hosts" color="text-white" center icon={CiMicrophoneOn} />
+            <Heading title="meet our admin" color="text-white" center icon={CiMicrophoneOn} />
 
             <div className="flex flex-wrap justify-center items-center gap-12 py-8">
                 {
-                    hostData.map((item, i) => (
+                    hostData.map((host, i) => (
                         <div key={i} className="flex flex-col justify-center items-center relative">
                             <div className={s.circle}>
-                                <Image src={item.image} alt="host" className="" width={300} height={300}  />
+                                <Image src={host.image} alt="host" className="" width={300} height={300}  />
                             </div>
                             <div className="absolute bottom-12 text-white text-2xl md:text-4xl font-bold my-4">
                                 <h1>
-                                {item.name}
+                                {host.name}
                                 </h1>
                             </div>
                             <div className="flex flex-row gap-2 items-center mt-4">
