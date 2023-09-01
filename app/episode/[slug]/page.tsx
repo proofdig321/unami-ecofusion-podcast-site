@@ -29,7 +29,7 @@ export async function generateMetadata({ params: { slug } }: Props) {
     const query = groq`*[_type=="episode" && slug.current == $slug][0] {
       title,
       description,
-      coverArt
+      "coverArtUrl": coverArt.asset->url
     }`;
 
     const clientFetch = cache(client.fetch.bind(client));
@@ -60,26 +60,19 @@ export async function generateMetadata({ params: { slug } }: Props) {
       };
     }
 
-    const coverArtUrl = post.coverArt?.asset.url || "https://example.com/default-image.jpg";
-
-    // Check if the coverArtUrl has a valid content type
-    const supportedImageTypes = ["jpg", "jpeg", "png", "gif"];
-    const isSupportedImage = supportedImageTypes.some((type) =>
-      coverArtUrl.toLowerCase().endsWith(type)
-    );
-    const finalCoverArtUrl = isSupportedImage ? coverArtUrl : "https://example.com/default-image.jpg";
+    const coverArtUrl = post.coverArtUrl || "https://example.com/default-image.jpg";
 
     return {
       title: post.title,
       description: post.description,
-      image: finalCoverArtUrl,
+      image: coverArtUrl,
       openGraph: {
         title: post.title,
         description: post.description,
-        url: `https://www.unamipodcast.site/episode/${slug}`,
+        url: `${process.env.SITE_URL}/episode/${slug}`,
         images: [
           {
-            url: finalCoverArtUrl,
+            url: coverArtUrl,
             width: 800,
             height: 600,
           },
@@ -95,7 +88,7 @@ export async function generateMetadata({ params: { slug } }: Props) {
         fbAppId: "651424070289695",
       },
       meta: [
-        { property: "og:image", content: finalCoverArtUrl },
+        { property: "og:image", content: coverArtUrl },
       ],
     };
   } catch (error) {
