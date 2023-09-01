@@ -30,15 +30,24 @@ export default async function  Home(){
     },
    }
  `
+   const hostQuery = groq`
+      *[_type == 'host']{
+        name,
+        picture {
+          alt,
+          asset->{
+            url
+          }
+        }
+      }
+    `
 
    const categoryQuery = groq`
       *[_type == 'category']{
         ...,
       }
    `
-   
-   
-
+  const hosts = await client.fetch(hostQuery);
   const posts = await client.fetch(query);
   const categories = await client.fetch(categoryQuery);
   const filterposts = posts.filter((post: any, index: number) => index < 4)
@@ -53,7 +62,7 @@ export default async function  Home(){
       <Usection />
       <MediaLink />
       <Categories categories={categories} />
-      <Host />
+      <Host/>
       <FavoriteMost filterposts={filterposts} />
       <FaqSection />
     </ClientOnly>
