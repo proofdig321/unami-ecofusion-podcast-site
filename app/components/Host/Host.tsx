@@ -24,8 +24,8 @@ interface HostData {
 }
 
 const client = createClient({
-  projectId: 'your-project-id',
-  dataset: 'your-dataset-name',
+  projectId: 'kx4v622s',
+  dataset: 'production',
   useCdn: true,
 });
 
