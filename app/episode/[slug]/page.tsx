@@ -109,7 +109,7 @@ export async function generateMetadata({ params: { slug } }: Props) {
           },
         ],
         locale: "en_US",
-        fbAppId: "651424070289695",
+        fbAppId: "651424070289695", 
       },
       meta: [
         { property: "og:image", content: "" },
