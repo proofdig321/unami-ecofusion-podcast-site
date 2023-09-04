@@ -20,7 +20,7 @@ export default defineType ({
     },
     {
       name: 'fileUrl',
-      title: 'External location for podcast media file',
+      title: 'File URL',
       description: 'For when you host your podcast media file elsewhere',
       type: 'url'
     },
