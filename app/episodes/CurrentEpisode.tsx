@@ -12,6 +12,11 @@ const CurrentEpisode = ({ posts }: any) => {
 
   const filter = posts.filter((post: any, index: number) => index < 1);
 
+  const handlePlayEpisode = (fileUrl: string) => {
+    const audio = new Audio(fileUrl);
+    audio.play();
+  };
+
   return (
     <div className="">
       <Heading title="Just dropped" color="text-white" />
@@ -43,10 +48,7 @@ const CurrentEpisode = ({ posts }: any) => {
                   color="primary"
                   bgcolor="bg-white"
                   icon={AiFillPlayCircle}
-                  onClick={() => {
-                    const audio = new Audio(post.fileUrl);
-                    audio.play();
-                  }}
+                  onClick={() => handlePlayEpisode(post.fileUrl)}
                 />
                 <Button
                   label="More"
@@ -68,6 +70,7 @@ const CurrentEpisode = ({ posts }: any) => {
 };
 
 export default CurrentEpisode;
+
 
 
 
