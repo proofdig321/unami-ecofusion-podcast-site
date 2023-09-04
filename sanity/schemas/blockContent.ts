@@ -113,9 +113,50 @@ export default defineType({
     
     // primitive types such as 'string' and 'number' in the same array
     // as a block type.
+    // Add the audio field with the desired features
     {
-      type: 'youtube'
+      name: 'audio',
+      title: 'Inline Audio',
+      type: 'object',
+      fields: [
+        {
+          name: 'url',
+          title: 'Audio URL',
+          type: 'url',
+        },
+        {
+          name: 'autoplay',
+          title: 'Autoplay',
+          type: 'boolean',
+        },
+        {
+          name: 'controls',
+          title: 'Show Controls',
+          type: 'boolean',
+        },
+        // Add more fields as needed for additional features and options
+      ],
     },
+    {
+      name: 'youtube',
+      title: 'YouTube',
+      type: 'object',
+      fields: [
+        {
+          name: 'url',
+          title: 'YouTube URL',
+          type: 'url',
+        },
+        {
+          name: 'caption',
+          title: 'Caption',
+          type: 'text',
+        },
+        // Add more fields as needed for additional features
+        // Examples: autoplay, mute, controls, start time, etc.
+      ],
+    },
+
     defineArrayMember({
       type: 'image',
       options: {hotspot: true},
