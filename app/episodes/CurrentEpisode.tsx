@@ -1,5 +1,77 @@
 'use client'
+import { urlForImage } from "@/sanity/lib/image";
+import Image from "next/image";
+import Button from "../components/Button";
+import { AiFillPlayCircle } from "react-icons/ai";
+import { BsArrowUpRightCircleFill } from "react-icons/bs";
+import { useRouter } from "next/navigation";
+import Heading from "../components/Heading";
 
+const CurrentEpisode = ({ posts }: any) => {
+  const router = useRouter();
+
+  const filter = posts.filter((post: any, index: number) => index < 1);
+
+  return (
+    <div className="">
+      <Heading title="Just dropped" color="text-white" />
+      
+
+      {filter.map((post: any, index: number) => (
+        <div key={post._id} className="text-white h-auto bg-black p-4">
+          <div className="flex flex-col md:flex-row gap-8">
+            <div>
+              <Image
+                src={urlForImage(post.coverArt).url()}
+                alt={post.title}
+                width={300}
+                height={500}
+                className="w-full"
+              />
+            </div>
+            <div>
+              <h1>{post.title}</h1>
+              
+
+              <div>{post.summary}</div>
+              
+
+
+              <div className="flex flex-col md:flex-row gap-4  my-4">
+                <Button
+                  label="Play Episode"
+                  color="primary"
+                  bgcolor="bg-white"
+                  icon={AiFillPlayCircle}
+                  onClick={() => {
+                    const audio = new Audio(post.fileUrl);
+                    audio.play();
+                  }}
+                />
+                <Button
+                  label="More"
+                  color="white"
+                  bgcolor="bg-primary"
+                  icon={BsArrowUpRightCircleFill}
+                  onClick={() => {
+                    window.scrollTo(0, 0);
+                    router.push(`/episode/${post.slug.current}`);
+                  }}
+                />
+              </div>
+            </div>
+          </div>
+        </div>
+      ))}
+    </div>
+  );
+};
+
+export default CurrentEpisode;
+
+
+
+{/*
 import { urlForImage } from "@/sanity/lib/image";
 import Image from "next/image";
 import Button from "../components/Button";
