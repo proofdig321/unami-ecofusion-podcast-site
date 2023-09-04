@@ -12,7 +12,7 @@ import { client } from '@/sanity/lib/client';
 import { groq } from 'next-sanity';
 import Loader from './components/loader/Loader';
 import FaqSection from './components/Faq';
-import ClientOnly from './components/ClientOnly';
+import ClientOnly from './components/ClientOnly'; // Import the ClientOnly component
 
 interface Episode {
   title: string;
@@ -85,7 +85,7 @@ const Home: React.FC = () => {
 
   return (
     <main>
-      <ClientOnly>
+      <ClientOnly> {/* Wrap the components that use useState with ClientOnly */}
         <Loader />
         <Hero />
         <Brands />
