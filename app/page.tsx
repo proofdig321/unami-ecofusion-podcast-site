@@ -23,6 +23,7 @@ export default async function  Home(){
     description,
     blogContent,
     fileUrl,
+    host,
     "categories": *[_type=='category' && references(^._id)] {
       title,
       slug,

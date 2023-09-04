@@ -4,6 +4,7 @@ import Image from "next/image"
 import Container from "../Container"
 import Heading from "../Heading"
 import { hostData } from "../data/data"
+import Imag
 
 import s from './Host.module.css'
 import { AiFillLinkedin, AiFillTwitterCircle, AiOutlineFacebook, AiOutlineInstagram } from "react-icons/ai"
