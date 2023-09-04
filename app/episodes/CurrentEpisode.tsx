@@ -46,7 +46,7 @@ const CurrentEpisode = ({ posts }: any) => {
                 <Button
                   label="Play Episode"
                   color="primary"
-                  bgcolor="bg-white"
+                  bgcolor="bg-red"
                   icon={AiFillPlayCircle}
                   onClick={() => handlePlayEpisode(post.fileUrl)}
                 />
