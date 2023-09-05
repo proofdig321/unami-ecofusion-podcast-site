@@ -115,7 +115,7 @@ export async function generateMetadata({ params: { slug } }: Props) {
         locale: "en_US",
         fbAppId: "651424070289695", 
         // LinkedIn-specific metadata
-        "og:site_name": "Unami Ecofusion Podacst Blog",
+        "og:site_name": "Your Site Name",
       },
       meta: [
         { property: "og:image", content: "" },
