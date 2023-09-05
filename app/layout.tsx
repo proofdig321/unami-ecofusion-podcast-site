@@ -8,6 +8,7 @@ import SearchModal from './search/SearchModal'
 import { Suspense } from 'react'
 import Loading from './loading'
 import { Metadata } from 'next'
+import Analytics from '@/lib/analytics'
 
 
 const inter = Inter({ subsets: ['latin'] })
@@ -39,6 +40,8 @@ export default function RootLayout({
             <SearchModal />
             <Suspense fallback={<Loading />}>
               {children}
+              <Analytics />
+
             </Suspense>
             <Subscribe />
             <Footer />
