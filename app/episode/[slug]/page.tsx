@@ -40,15 +40,15 @@ export async function generateMetadata({ params: { slug } }: Props) {
         title: "Not Found",
         description: "The page you are looking for does not exist.",
         openGraph: {
-          "og:title": "Not Found",
-          "og:description": "The page you are looking for does not exist.",
-          "og:url": process.env.SITE_URL,
-          "og:type": "website",
-          "og:image": "https://example.com/default-image.jpg",
-          "og:site_name": "Unami Ecofusion Podcast Blog",
+          title: "Not Found",
+          description: "The page you are looking for does not exist.",
+          url: process.env.SITE_URL,
+          type: "website",
+          // Provide a LinkedIn-specific image URL
+          image: "https://example.com/default-image.jpg",
         },
         meta: [
-          { property: "og:image", content: "" },
+          // Remove this empty og:image tag
         ],
       };
     }
@@ -59,15 +59,15 @@ export async function generateMetadata({ params: { slug } }: Props) {
       title: post.title,
       description: post.description,
       openGraph: {
-        "og:title": post.title,
-        "og:description": post.description,
-        "og:url": `${process.env.SITE_URL}/episode/${slug}`,
-        "og:image": coverArtUrl,
-        "og:type": "website",
-        "og:site_name": "Unami Ecofusion Podcast Blog",
+        title: post.title,
+        description: post.description,
+        url: `${process.env.SITE_URL}/episode/${slug}`,
+        type: "website",
+        // Provide a LinkedIn-specific image URL
+        image: coverArtUrl,
       },
       meta: [
-        { property: "og:image", content: coverArtUrl },
+        // Remove this empty og:image tag
       ],
     };
   } catch (error) {
@@ -76,20 +76,19 @@ export async function generateMetadata({ params: { slug } }: Props) {
       title: "Not Found",
       description: "The page you are looking for does not exist.",
       openGraph: {
-        "og:title": "Not Found",
-        "og:description": "The page you are looking for does not exist.",
-        "og:url": process.env.SITE_URL,
-        "og:type": "website",
-        "og:image": "https://example.com/default-image.jpg",
-        "og:site_name": "Unami Ecofusion Podcast Blog",
+        title: "Not Found",
+        description: "The page you are looking for does not exist.",
+        url: process.env.SITE_URL,
+        type: "website",
+        // Provide a LinkedIn-specific image URL
+        image: "https://example.com/default-image.jpg",
       },
       meta: [
-        { property: "og:image", content: "" },
+        // Remove this empty og:image tag
       ],
     };
   }
 }
-
 
 {/*
 //working fine
