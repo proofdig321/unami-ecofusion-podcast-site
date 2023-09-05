@@ -15,6 +15,7 @@
     "@sanity/portable-text-editor": "^3.14.1",
     "@sanity/preview-kit": "^2.3.0",
     "@sanity/types": "^3.10.1",
+    "@sanity/ui": "^1.8.2",
     "@sanity/vision": "^3.10.0",
     "@types/node": "18.16.3",
     "@types/react": "18.2.5",

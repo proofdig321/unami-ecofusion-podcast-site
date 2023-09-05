@@ -1,30 +1,32 @@
 'use client'
-{/*
+
 import React from 'react';
 import getYouTubeId from 'get-youtube-id';
 import LiteYouTubeEmbed from 'react-lite-youtube-embed';
 import 'react-lite-youtube-embed/dist/LiteYouTubeEmbed.css';
 import Image from 'next/image';
 import Link from 'next/link';
-import urlFor from '@/sanity/lib/urlFor';
+import urlFor from '@/sanity/lib/urlFor'; // Adjust import path as needed
 
 export const RichTextComponents = {
   types: {
-    image: ({ value }: any) => {
+    image: ({ node }: any) => {
       return (
         <div className="relative w-full h-96 m-10 mx-auto">
           <Image
             className="object-contain"
-            src={urlFor(value).url()}
+            src={urlFor(node.asset).url()}
             alt="Blog Post Image"
-            fill
+            layout="fill"
+            objectFit="contain"
           />
         </div>
       );
     },
-    youtube: ({ value }: any) => {
-      const id = getYouTubeId(value.url);
+    youtube: ({ node }: any) => {
+      const id = getYouTubeId(node.url);
 
+      // Check if id is a valid string before rendering the component
       if (id) {
         return (
           <div className="my-4">
@@ -33,16 +35,16 @@ export const RichTextComponents = {
         );
       }
 
+      // Handle the case when id is null or invalid (optional)
       return <p>Invalid YouTube URL</p>;
     },
-    // Add a new type for handling audio
-    audio: ({ value }: any) => {
-      const ref = value.asset._ref;
-      const projectId = process.env.NEXT_PUBLIC_SANITY_PROJECT_ID;
+    audio: ({ node }: any) => {
+      const ref = node.asset._ref;
+      const projeccId = process.env.NEXT_PUBLIC_SANITY_PROJECT_ID;
       const dataset = process.env.NEXT_PUBLIC_SANITY_DATASET;
-
+      
       const [_file, id, extension] = ref.split("-");
-      const audioUrl = `https://cdn.sanity.io/files/${projectId}/${dataset}/${id}.${extension}`;
+      const audioUrl = `https://cdn.sanity.io/files/${projeccId}/${dataset}/${id}.${extension}`;
 
       return (
         <audio controls>
@@ -50,6 +52,11 @@ export const RichTextComponents = {
         </audio>
       );
     },
+    // Add support for more block types here, following the same pattern.
+    // Example:
+    // blockType: ({ node }: any) => {
+    //   return <div>{node.someField}</div>;
+    // },
   },
   list: {
     bullet: ({ children }: any) => (
@@ -77,29 +84,40 @@ export const RichTextComponents = {
         {children}
       </blockquote>
     ),
+    // Add support for more block styles here, following the same pattern.
+    // Example:
+    // customStyle: ({ children }: any) => (
+    //   <div className="custom-style">{children}</div>
+    // ),
   },
   marks: {
-    link: ({ children, value }: any) => {
-      const rel = !value.href.startsWith('/')
+    link: ({ children, mark }: any) => {
+      const rel = !mark.href.startsWith('/')
         ? 'noopener noreferrer'
         : undefined;
 
       return (
         <Link
-          href={value.href}
+          href={mark.href}
           rel={rel}
-          className="underline decoration-[#8F00FF] hover:decoration-black"
+          className="underline decoreration-[#8F00FF] hover:decoration-black"
         >
           {children}
         </Link>
       );
     },
+    // Add support for more mark types here, following the same pattern.
+    // Example:
+    // customMark: ({ children, mark }: any) => (
+    //   <span className="custom-mark">{children}</span>
+    // ),
   },
 };
+
 export default RichTextComponents;
-*/}
 
 
+{/*
 import React from 'react';
 import getYouTubeId from 'get-youtube-id';
 import LiteYouTubeEmbed from 'react-lite-youtube-embed';
@@ -204,3 +222,4 @@ export const RichTextComponents = {
 };
 
 export default RichTextComponents;
+*/}
