@@ -1,5 +1,5 @@
 'use client'
-
+{/*
 import React from 'react';
 import getYouTubeId from 'get-youtube-id';
 import LiteYouTubeEmbed from 'react-lite-youtube-embed';
@@ -96,10 +96,10 @@ export const RichTextComponents = {
     },
   },
 };
-
 export default RichTextComponents;
+*/}
 
-{/*
+
 import React from 'react';
 import getYouTubeId from 'get-youtube-id';
 import LiteYouTubeEmbed from 'react-lite-youtube-embed';
@@ -204,4 +204,3 @@ export const RichTextComponents = {
 };
 
 export default RichTextComponents;
-*/}
