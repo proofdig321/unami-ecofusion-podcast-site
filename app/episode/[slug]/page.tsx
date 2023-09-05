@@ -44,11 +44,9 @@ export async function generateMetadata({ params: { slug } }: Props) {
           description: "The page you are looking for does not exist.",
           url: process.env.SITE_URL,
           type: "website",
-          // Provide a LinkedIn-specific image URL
-          image: "https://example.com/default-image.jpg",
         },
         meta: [
-          // Remove this empty og:image tag
+          // No need for og:image in the meta section
         ],
       };
     }
@@ -63,11 +61,11 @@ export async function generateMetadata({ params: { slug } }: Props) {
         description: post.description,
         url: `${process.env.SITE_URL}/episode/${slug}`,
         type: "website",
-        // Provide a LinkedIn-specific image URL
+        // Provide a LinkedIn-specific image URL directly in the openGraph object
         image: coverArtUrl,
       },
       meta: [
-        // Remove this empty og:image tag
+        // No need for og:image in the meta section
       ],
     };
   } catch (error) {
@@ -80,11 +78,9 @@ export async function generateMetadata({ params: { slug } }: Props) {
         description: "The page you are looking for does not exist.",
         url: process.env.SITE_URL,
         type: "website",
-        // Provide a LinkedIn-specific image URL
-        image: "https://example.com/default-image.jpg",
       },
       meta: [
-        // Remove this empty og:image tag
+        // No need for og:image in the meta section
       ],
     };
   }
