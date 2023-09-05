@@ -8,7 +8,7 @@ import SearchModal from './search/SearchModal'
 import { Suspense } from 'react'
 import Loading from './loading'
 import { Metadata } from 'next'
-import Analytics from '@/lib/analytics'
+import Analytics from '@/app/analytics'
 
 
 const inter = Inter({ subsets: ['latin'] })
