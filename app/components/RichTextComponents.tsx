@@ -39,16 +39,23 @@ export const RichTextComponents = {
     },
   },
       // Add a new type for handling audio
-      audio: ({ value }: any) => {
-        return (
-          <div className="my-4">
+      audio: {
+        inlineAudio: ({ value }: any) => {
+          const ref = value.asset._ref;
+          const projeccId = process.env.NEXT_PUBLIC_SANITY_PROJECT_ID;
+          const dataset = process.env.NEXT_PUBLIC_SANITY_DATASET;
+          
+          const [_file, id, extension] = ref.split("-");
+          const audioUrl = `https://cdn.sanity.io/files/${projeccId}/${dataset}/${id}.${extension}`;
+    
+          return (
             <audio controls>
-              <source src={value.url} type="audio/mpeg" />
-              Your browser does not support the audio element.
+              <source src={audioUrl} type="audio/mpeg" />
             </audio>
-          </div>
-        );
+          );
+        },
       },
+    
   
   list: {
     bullet: ({ children }: any) => (
