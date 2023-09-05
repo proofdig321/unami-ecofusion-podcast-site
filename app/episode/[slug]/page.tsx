@@ -40,21 +40,12 @@ export async function generateMetadata({ params: { slug } }: Props) {
         title: "Not Found",
         description: "The page you are looking for does not exist.",
         openGraph: {
-          title: "Not Found",
-          description: "The page you are looking for does not exist.",
-          url: process.env.SITE_URL,
-          type: "website",
-          images: [
-            {
-              url: "https://example.com/default-image.jpg",
-              width: 800,
-              height: 600,
-            },
-          ],
-          locale: "en_US",
-          fbAppId: "651424070289695",
-          // LinkedIn-specific metadata
-          "og:site_name": "Your Site Name",
+          "og:title": "Not Found",
+          "og:description": "The page you are looking for does not exist.",
+          "og:url": process.env.SITE_URL,
+          "og:type": "website",
+          "og:image": "https://example.com/default-image.jpg",
+          "og:site_name": "Unami Ecofusion Podcast Blog",
         },
         meta: [
           { property: "og:image", content: "" },
@@ -67,29 +58,13 @@ export async function generateMetadata({ params: { slug } }: Props) {
     return {
       title: post.title,
       description: post.description,
-      image: coverArtUrl,
       openGraph: {
-        title: post.title,
-        description: post.description,
-        url: `${process.env.SITE_URL}/episode/${slug}`,
-        images: [
-          {
-            url: coverArtUrl,
-            width: 800,
-            height: 600,
-          },
-          {
-            url: "https://example.com/default-image.jpg",
-            width: 1800,
-            height: 1600,
-            alt: "My custom alt",
-          },
-        ],
-        locale: "en_US",
-        type: "website",
-        fbAppId: "651424070289695",
-        // LinkedIn-specific metadata
-        "og:site_name": "Your Site Name",
+        "og:title": post.title,
+        "og:description": post.description,
+        "og:url": `${process.env.SITE_URL}/episode/${slug}`,
+        "og:image": coverArtUrl,
+        "og:type": "website",
+        "og:site_name": "Unami Ecofusion Podcast Blog",
       },
       meta: [
         { property: "og:image", content: coverArtUrl },
@@ -101,21 +76,12 @@ export async function generateMetadata({ params: { slug } }: Props) {
       title: "Not Found",
       description: "The page you are looking for does not exist.",
       openGraph: {
-        title: "Not Found",
-        description: "The page you are looking for does not exist.",
-        url: process.env.SITE_URL,
-        type: "website",
-        images: [
-          {
-            url: "https://example.com/default-image.jpg",
-            width: 800,
-            height: 600,
-          },
-        ],
-        locale: "en_US",
-        fbAppId: "651424070289695", 
-        // LinkedIn-specific metadata
-        "og:site_name": "Your Site Name",
+        "og:title": "Not Found",
+        "og:description": "The page you are looking for does not exist.",
+        "og:url": process.env.SITE_URL,
+        "og:type": "website",
+        "og:image": "https://example.com/default-image.jpg",
+        "og:site_name": "Unami Ecofusion Podcast Blog",
       },
       meta: [
         { property: "og:image", content: "" },
