@@ -1,48 +1,8 @@
 'use client'
 
-
-import React, { useState } from 'react';
 import Button from '../components/Button';
+import React, { useState, useRef } from 'react';
 
-export default function FormBody() {
-  async function handleSubmit(event) {
-      event.preventDefault();
-      const formData = new FormData(event.target);
-
-      formData.append("access_key", "231a110a-833c-4030-a18c-d2d9b20334c3");
-
-      const object = Object.fromEntries(formData);
-      const json = JSON.stringify(object);
-
-      const response = await fetch("https://api.web3forms.com/submit", {
-          method: "POST",
-          headers: {
-            "Content-Type": "application/json",
-            Accept: "application/json"
-          },
-          body: json
-      });
-      const result = await response.json();
-      if (result.success) {
-          console.log(result);
-      }
-  }
-
-return (
-  <>
-    <form onSubmit={handleSubmit}>
-      <input type="text" name="name"/>
-      <input type="email" name="email"/>
-      <textarea name="message"></textarea>
-      <Button type="submit">Submit Form</Button>
-    </form>
-  </>
-);
-}
-
-
-
-{/*
 const FormBody = () => {
 
   return (
@@ -92,4 +52,3 @@ const FormBody = () => {
 }
 
 export default FormBody
-*/}
