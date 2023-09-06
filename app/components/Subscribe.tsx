@@ -1,3 +1,5 @@
+'use client'
+
 {/*
 'use client'
 
@@ -29,7 +31,6 @@ const Subscribe = () => {
 
 export default Subscribe
 */}
-'use client'
 
 import Image from "next/image"
 import Container from "./Container"
