@@ -1,13 +1,15 @@
 'use client'
 
 import Button from '../components/Button';
-
-import React from 'react';
+import React, { useState, useRef } from 'react';
 
 const FormBody = () => {
+  const [submissionMessage, setSubmissionMessage] = useState('');
+  const formRef = useRef(null);
+
   const handleSubmit = async (e) => {
     e.preventDefault();
-    const form = e.target;
+    const form = formRef.current;
     const result = form.querySelector("#result");
     const formData = new FormData(form);
     const object = {};
@@ -33,7 +35,12 @@ const FormBody = () => {
       const responseData = await response.json();
 
       if (response.status === 200) {
-        result.innerHTML = responseData.message;
+        // Customize the success message based on the form data
+        const successMessage = `A new form has been submitted on your website. Details below.\nName: ${object.name}\nEmail: ${object.email}\nPhone Number: ${object.phone}\nSubject: ${object.subject}\nMessage: ${object.message}`;
+        
+        setSubmissionMessage(successMessage);
+
+        result.innerHTML = successMessage;
         result.classList.remove("text-gray-500");
         result.classList.add("text-green-500");
       } else {
@@ -59,7 +66,8 @@ const FormBody = () => {
         action="https://api.web3forms.com/submit"
         method="POST"
         id="form"
-        onSubmit={handleSubmit} // Add the form submit handler here
+        onSubmit={handleSubmit}
+        ref={formRef}
       >
         <input type="hidden" name="access_key" value="bf36a384-65b3-4e78-a50f-c86559d97517" />
         <input type="hidden" name="subject" value="New Submission from Web3Forms" />
@@ -71,6 +79,7 @@ const FormBody = () => {
           </label>
           <input
             type="text"
+            name="name" // Add the name attribute
             placeholder="Enter your name"
             className="w-full p-4 rounded-xl border border-black outline-none focus:outline focus:outline-black"
           />
@@ -82,6 +91,7 @@ const FormBody = () => {
           </label>
           <input
             type="email"
+            name="email" // Add the email attribute
             placeholder="Enter your email"
             className="w-full p-4 rounded-xl border border-black outline-none focus:outline focus:outline-black"
           />
@@ -93,6 +103,7 @@ const FormBody = () => {
           </label>
           <input
             type="tel"
+            name="phone" // Add the phone attribute
             placeholder="Enter your phone number"
             className="w-full p-4 rounded-xl border border-black outline-none focus:outline focus:outline-black"
           />
@@ -104,6 +115,7 @@ const FormBody = () => {
           </label>
           <input
             type="text"
+            name="subject" // Add the subject attribute
             placeholder="Enter your subject"
             className="w-full p-4 rounded-xl border border-black outline-none focus:outline focus:outline-black"
           />
@@ -114,18 +126,19 @@ const FormBody = () => {
             Message
           </label>
           <textarea
+            name="message" // Add the message attribute
             placeholder="Your message"
             className="w-full h-[200px] p-4 rounded-xl border border-black outline-none focus:outline focus:outline-black"
           ></textarea>
         </div>
 
         <div>
-          <button
+          <Button
             type="submit"
-            className="w-full bg-indigo-600 inline-block text-black no-underline hover:text-indigo-100 py-4 px-4 rounded-sm focus:outline-none"
+            className="w-full bg-indigo-600 inline-block text-white no-underline hover:text-indigo-100 py-4 px-4 rounded-sm focus:outline-none"
           >
             Send Message
-          </button>
+          </Button>
         </div>
         <p className="text-base text-center text-gray-400" id="result"></p>
       </form>
