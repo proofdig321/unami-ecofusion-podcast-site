@@ -133,12 +133,12 @@ const FormBody = () => {
         </div>
 
         <div>
-          <Button
+          <button
             type="submit"
-            className="w-full bg-indigo-600 inline-block text-white no-underline hover:text-indigo-100 py-4 px-4 rounded-sm focus:outline-none"
+            className="w-full bg-indigo-300 inline-block text-black no-underline hover:text-indigo-100 py-4 px-4 rounded-sm focus:outline-none"
           >
             Send Message
-          </Button>
+          </button>
         </div>
         <p className="text-base text-center text-gray-400" id="result"></p>
       </form>
