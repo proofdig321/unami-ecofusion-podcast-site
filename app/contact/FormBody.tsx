@@ -7,7 +7,10 @@ const FormBody = () => {
 
   return (
     <div>
-      <form>
+      <form action="https://api.web3forms.com/submit" method="POST" id="form">
+          <input type="hidden" name="access_key" value="bf36a384-65b3-4e78-a50f-c86559d97517" />
+          <input type="hidden" name="subject" value="New Submission from Web3Forms" />
+        {/*  <input type="checkbox" name="botcheck" id="" style="display: none;" /> */}
         <div className='my-8'>
           <label className='block text-base font-bold mb-2 md:text-xl'>
             Name
