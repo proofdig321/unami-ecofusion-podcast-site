@@ -23,6 +23,6 @@
       "@/*": ["./*"]
     }
   },
-  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", ".next/types/**/*.ts","@/app/components/RichTextComponents", "next-sitemap.config.js", "lib/getData.js", "sanity/schemas/youtube.js", "app/components/RichTextComponents.tsx", "app/components/Host/Host.tsx", "app/contact/FormBody.tsx", "app/components/NewsletterForm.js",],
+  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", ".next/types/**/*.ts","@/app/components/RichTextComponents", "next-sitemap.config.js", "lib/getData.js", "sanity/schemas/youtube.js", "app/components/RichTextComponents.tsx", "app/components/Host/Host.tsx", "app/contact/FormBody.jsx", "app/components/NewsletterForm.js",],
   "exclude": ["node_modules"]
 }
