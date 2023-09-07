@@ -189,12 +189,12 @@ export const favoriteEpisodes = [
   export const contactInfo = [
     {
       type: "Email",
-      value: "bhekithembasimelane321@gmail.com",
+      value: "unamipodcast@gmail.com",
       icon: <FaEnvelope />
     },
     {
       type: "Phone",
-      value: "+27 (67) 761-1756",
+      value: "+27 (72) 700-2502",
       icon: <FaPhone />
     },
     {

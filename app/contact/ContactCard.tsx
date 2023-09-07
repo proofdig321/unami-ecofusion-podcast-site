@@ -10,7 +10,7 @@ const ContactCard = () => {
             Contact information
         </h4>
         <p className='text-base md:text-xl'>
-        We are thrilled to connect with potential sponsors, podocasters and advertisers who are interested in partnering with us. If you have any questions or would like to explore collaboration opportunities, please feel free to reach out to us using the contact information provided below. We value your interest and look forward to discussing how we can work together to create meaningful and impactful content.
+        We are thrilled to connect with potential sponsors who shares similar interest about a sustainable future , podocasters and advertisers who are interested in partnering with us. If you have any questions or would like to explore collaboration opportunities, please feel free to reach out to us using the contact information provided below. We value your interest and look forward to discussing how we can work together to create meaningful and impactful content.
 
 </p>
         <div className='mt-10'>
