@@ -48,7 +48,7 @@ const Subscribe = () => {
     EMAIL: "",
   });
 
-  const handleFormSubmit = (event) => {
+  const handleFormSubmit = (event: { preventDefault: () => void; }) => {
     event.preventDefault();
     handleSubmit(fields);
   };
