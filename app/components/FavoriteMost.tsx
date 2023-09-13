@@ -14,7 +14,7 @@ const FavoriteMost = ({filterposts} : any) => {
                 <Heading title="Most Favorite Epsiodes" color="text-white" center />
                 <br />
                 <p className="max-w-6xl mx-auto text-center text-white">
-                Delve into plots that emphasize the importance of conservation, renewable energy, and responsible consumption. These episodes are not just about entertainment; they're about inspiring real-world action and positive change.
+                These episodes are not just about entertainment; they're about inspiring real-world action and positive change.
                 </p>
             </div>
 
