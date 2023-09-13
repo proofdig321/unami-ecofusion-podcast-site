@@ -399,7 +399,7 @@ const BlogPost = async ({ params: { slug }}: Props) => {
             //post.fileUrl && <><AudioPlayer fileUrl={post.fileUrl} /> 
                 //...
                 <ReactAudioPlayer
-                  src="post.fileUrl"
+                  src={post.fileUrl}
                   autoPlay
                   controls />
         }
