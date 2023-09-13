@@ -13,6 +13,7 @@ import AudioPlayer from "@/app/episodes/AudioPlayer";
 import { Metadata } from 'next';
 import episode from "@/sanity/schemas/episode";
 const util = require('util');
+import ReactAudioPlayer from 'react-audio-player';
 
 
 
@@ -395,7 +396,12 @@ const BlogPost = async ({ params: { slug }}: Props) => {
         <MediaLink />
         <div className='fixed bottom-0 left-0  w-full'>
         {
-            post.fileUrl && <AudioPlayer fileUrl={post.fileUrl} />
+            //post.fileUrl && <><AudioPlayer fileUrl={post.fileUrl} /> 
+                //...
+                <ReactAudioPlayer
+                  src="post.fileUrl"
+                  autoPlay
+                  controls />
         }
         </div>
         
