@@ -18,10 +18,10 @@ const Usection = () => {
                     <Heading title="we make available to you the best podcast" color="text-black" />
                     <br />
                     <p className="text-base md:text-lg">
-                    A blog that promotes and amplifies podcasts created by underrepresented voices. It can highlight podcasts produced by marginalized communities, featuring a diverse range of perspectives and stories.                     </p>
+                    A blog that promotes sustainability and amplifies podcasts created by underrepresented voices. We highlight podcasts produced by marginalized communities, featuring a diverse range of perspectives and stories.                     </p>
                     <br />
                     <p className="text-base md:text-lg">
-                    The site could also provide resources, grants, and mentorship opportunities to support aspiring podcasters from underrepresented backgrounds.                    </p>
+                    Step into a world where sustainability reigns supreme, and your most cherished episodes come to life with an eco-conscious twist.                    </p>
                     
                 </div>
             </div>

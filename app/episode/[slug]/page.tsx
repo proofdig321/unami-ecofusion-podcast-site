@@ -396,6 +396,7 @@ const BlogPost = async ({ params: { slug }}: Props) => {
         <div className='fixed bottom-0 left-0  w-full'>
         {
             post.fileUrl && <AudioPlayer fileUrl={post.fileUrl} />
+            
         }
         </div>
         

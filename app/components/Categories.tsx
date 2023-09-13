@@ -17,7 +17,7 @@ const Categories = ({categories} : any) => {
             <div>
                 <Heading title="explore by categories" color="text-white" center />
                 <br />
-                <p className="text-center text-white">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quisquam perspiciatis fugit velit culpa excepturi</p>
+                <p className="text-center text-white">Join us on this journey of conscious consumption and sustainable living. Let sustainability guide your choices as you explore our categories, and together, we can make a meaningful difference in the world.</p>
             </div>
 
             <div className="text-white flex flex-row flex-wrap justify-center items-center  gap-2 sm:gap-6 gap-y-8 py-8">
