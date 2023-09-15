@@ -44,6 +44,70 @@ export async function generateMetadata({ params: { slug } }: Props) {
           description: "The page you are looking for does not exist.",
           url: process.env.SITE_URL,
           type: "website",
+          image: "https://example.com/default-image.jpg", // Provide a default image URL
+        },
+        meta: [
+          // No need for og:image in the meta section
+        ],
+      };
+    }
+
+    const coverArtUrl = post.coverArtUrl || "https://example.com/default-image.jpg";
+
+    return {
+      title: post.title,
+      description: post.description,
+      openGraph: {
+        title: post.title,
+        description: post.description,
+        url: `${process.env.SITE_URL}/episode/${slug}`,
+        type: "website",
+        image: coverArtUrl, // Set the cover art URL as the og:image
+      },
+      meta: [
+        // No need for og:image in the meta section
+      ],
+    };
+  } catch (error) {
+    console.error(error);
+    return {
+      title: "Not Found",
+      description: "The page you are looking for does not exist.",
+      openGraph: {
+        title: "Not Found",
+        description: "The page you are looking for does not exist.",
+        url: process.env.SITE_URL,
+        type: "website",
+        image: "https://example.com/default-image.jpg", // Provide a default image URL
+      },
+      meta: [
+        // No need for og:image in the meta section
+      ],
+    };
+  }
+}
+
+{/*
+export async function generateMetadata({ params: { slug } }: Props) {
+  try {
+    const query = groq`*[_type=="episode" && slug.current == $slug][0] {
+      title,
+      description,
+      "coverArtUrl": coverArt.asset->url
+    }`;
+
+    const clientFetch = cache(client.fetch.bind(client));
+    const post = await clientFetch(query, { slug });
+
+    if (!post) {
+      return {
+        title: "Not Found",
+        description: "The page you are looking for does not exist.",
+        openGraph: {
+          title: "Not Found",
+          description: "The page you are looking for does not exist.",
+          url: process.env.SITE_URL,
+          type: "website",
         },
         meta: [
           // No need for og:image in the meta section
@@ -86,257 +150,6 @@ export async function generateMetadata({ params: { slug } }: Props) {
   }
 }
 
-{/*
-//working fine
-export async function generateMetadata({ params: { slug } }: Props) {
-  try {
-    const query = groq`*[_type=="episode" && slug.current == $slug][0] {
-      title,
-      description,
-      "coverArtUrl": coverArt.asset->url
-    }`;
-
-    const clientFetch = cache(client.fetch.bind(client));
-    const post = await clientFetch(query, { slug });
-
-    if (!post) {
-      return {
-        title: "Not Found",
-        description: "The page you are looking for does not exist.",
-        openGraph: {
-          title: "Not Found",
-          description: "The page you are looking for does not exist.",
-          url: process.env.SITE_URL,
-          type: "website",
-          images: [
-            {
-              url: "https://example.com/default-image.jpg",
-              width: 800,
-              height: 600,
-            },
-          ],
-          locale: "en_US",
-          fbAppId: "651424070289695",
-        },
-        meta: [
-          { property: "og:image", content: "" },
-        ],
-      };
-    }
-
-    const coverArtUrl = post.coverArtUrl || "https://example.com/default-image.jpg";
-
-    return {
-      title: post.title,
-      description: post.description,
-      image: coverArtUrl,
-      openGraph: {
-        title: post.title,
-        description: post.description,
-        url: `${process.env.SITE_URL}/episode/${slug}`,
-        images: [
-          {
-            url: coverArtUrl,
-            width: 800,
-            height: 600,
-          },
-          {
-            url: "https://example.com/default-image.jpg",
-            width: 1800,
-            height: 1600,
-            alt: "My custom alt",
-          },
-        ],
-        locale: "en_US",
-        type: "website",
-        fbAppId: "651424070289695",
-      },
-      meta: [
-        { property: "og:image", content: coverArtUrl },
-      ],
-    };
-  } catch (error) {
-    console.error(error);
-    return {
-      title: "Not Found",
-      description: "The page you are looking for does not exist.",
-      openGraph: {
-        title: "Not Found",
-        description: "The page you are looking for does not exist.",
-        url: process.env.SITE_URL,
-        type: "website",
-        images: [
-          {
-            url: "https://example.com/default-image.jpg",
-            width: 800,
-            height: 600,
-          },
-        ],
-        locale: "en_US",
-        fbAppId: "651424070289695", 
-      },
-      meta: [
-        { property: "og:image", content: "" },
-      ],
-    };
-  }
-}
-/*}
-{/* use this for metadata
-
-export async function generateMetadata({ params: { slug } }: Props) {
-  try {
-    const query = groq`*[_type=="episode" && slug.current == $slug][0] {
-      title,
-      description,
-      coverArt
-    }`;
-
-    const clientFetch = cache(client.fetch.bind(client));
-    const post = await clientFetch(query, { slug });
-
-    if (!post) {
-      return {
-        title: "Not Found",
-        description: "The page you are looking for does not exist.",
-        openGraph: {
-          title: "Not Found",
-          description: "The page you are looking for does not exist.",
-          url: process.env.SITE_URL,
-          type: "website",
-          images: [
-            {
-              url: "https://example.com/default-image.jpg",
-              width: 800,
-              height: 600,
-            },
-          ],
-          locale: "en_US",
-          fbAppId: "651424070289695",
-        },
-        meta: [
-          { property: "og:image", content: "" },
-        ],
-      };
-    }
-
-    const coverArtUrl = post.coverArt?.asset.url || "https://example.com/default-image.jpg";
-
-    return {
-      title: post.title,
-      description: post.description,
-      image: coverArtUrl,
-      openGraph: {
-        title: post.title,
-        description: post.description,
-        url: `https:www.unamipodcast.site/episode/${slug}`,
-        images: [
-          {
-            url: coverArtUrl,
-            width: 800,
-            height: 600,
-          },
-          {
-            url: "https://example.com/default-image.jpg",
-            width: 1800,
-            height: 1600,
-            alt: "My custom alt",
-          },
-        ],
-        locale: "en_US",
-        type: "website",
-        fbAppId: "651424070289695",
-      },
-      meta: [
-        { property: "og:image", content: coverArtUrl },
-      ],
-    };
-  } catch (error) {
-    console.error(error);
-    return {
-      title: "Not Found",
-      description: "The page you are looking for does not exist.",
-      openGraph: {
-        title: "Not Found",
-        description: "The page you are looking for does not exist.",
-        url: process.env.SITE_URL,
-        type: "website",
-        images: [
-          {
-            url: "https://example.com/default-image.jpg",
-            width: 800,
-            height: 600,
-          },
-        ],
-        locale: "en_US",
-        fbAppId: "651424070289695",
-      },
-      meta: [
-        { property: "og:image", content: "" },
-      ],
-    };
-  }
-}
-*/}
-
-
-{/*
-export async function generateMetadata({ params: { slug } }: Props) {
-  try {
-  const query = groq`*[_type=="episode" && slug.current == $slug][0]  {
-    title,
-    description,
-    coverArt
-
-  }`;
-  
-  const clientFetch = cache(client.fetch.bind(client));
-  const post = await clientFetch(query, { slug });
-    if (!post)
-      return {
-        title: "Not Found",
-        description: "The page you are looking for does not exist.",
-      };
-    return {
-      title: post.title,
-      description: post.description,
-      // Use the image URL from the fetched data
-      image: post.coverArt?.asset.url || "https://mobisoftinfotech.com/resources/wp-content/uploads/2022/04/next-JS-framework.png", // Use the coverArt URL from the fetched data
-      openGraph: {
-        title: post.title,
-        description: post.description,
-        url: `https:www.unamipodcast.site/episode/${slug}`,
-        images: [
-          {
-            url: post.coverArt?.asset.url,
-            width: 800,
-            height: 600,
-          },
-          {
-            url: 'https://mobisoftinfotech.com/resources/wp-content/uploads/2022/04/next-JS-framework.png',
-            width: 1800,
-            height: 1600,
-            alt: 'My custom alt',
-          },
-        ],
-        locale: 'en_US',
-        type: 'website',
-        fbAppId: '651424070289695',
-      },
-    // Add the 'og:image' tag to the metadata
-    meta: [
-      { property: "og:image", content: post.coverArt?.asset.url || "" },
-    ],
-    
-    };
-  } catch (error) {
-    console.error(error);
-    return {
-      title: "Not Found",
-      description: "The page you are looking for does not exist.",
-    };
-  }
-}
 */}
  
 export async function generateStaticParams() {
