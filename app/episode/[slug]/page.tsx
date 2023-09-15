@@ -45,9 +45,7 @@ export async function generateMetadata({ params: { slug } }: Props): Promise<Met
           url: process.env.SITE_URL,
           type: "website",
         },
-        meta: [
-          // No need for og:image in the meta section
-        ],
+       
       };
     }
 
@@ -70,9 +68,7 @@ export async function generateMetadata({ params: { slug } }: Props): Promise<Met
           },
         ],
       },
-      meta: [
-        // No need for og:image in the meta section
-      ],
+     
     };
   } catch (error) {
     console.error(error);
@@ -85,9 +81,7 @@ export async function generateMetadata({ params: { slug } }: Props): Promise<Met
         url: process.env.SITE_URL,
         type: "website",
       },
-      meta: [
-        // No need for og:image in the meta section
-      ],
+      
     };
   }
 }
