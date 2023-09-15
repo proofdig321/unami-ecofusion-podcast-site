@@ -24,7 +24,7 @@ type Props = {
 
 export const revalidate = 60;
 
-export async function generateMetadata({ params: { slug } }: Props) {
+export async function generateMetadata({ params: { slug } }: Props): Promise<Metadata> {
   try {
     const query = groq`*[_type=="episode" && slug.current == $slug][0] {
       title,
@@ -44,7 +44,6 @@ export async function generateMetadata({ params: { slug } }: Props) {
           description: "The page you are looking for does not exist.",
           url: process.env.SITE_URL,
           type: "website",
-          image: "https://example.com/default-image.jpg", // Provide a default image URL
         },
         meta: [
           // No need for og:image in the meta section
@@ -62,7 +61,14 @@ export async function generateMetadata({ params: { slug } }: Props) {
         description: post.description,
         url: `${process.env.SITE_URL}/episode/${slug}`,
         type: "website",
-        image: coverArtUrl, // Set the cover art URL as the og:image
+        images: [
+          {
+            url: coverArtUrl,
+            width: 1200,
+            height: 630,
+            alt: "Cover Art",
+          },
+        ],
       },
       meta: [
         // No need for og:image in the meta section
@@ -78,7 +84,6 @@ export async function generateMetadata({ params: { slug } }: Props) {
         description: "The page you are looking for does not exist.",
         url: process.env.SITE_URL,
         type: "website",
-        image: "https://example.com/default-image.jpg", // Provide a default image URL
       },
       meta: [
         // No need for og:image in the meta section
