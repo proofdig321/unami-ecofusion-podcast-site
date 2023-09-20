@@ -81,7 +81,7 @@ export const favoriteEpisodes = [
           "label": "Our Story",
           "url": "/about"
         },
-        {/*
+        
         {
           "label": "Team",
           "url": "/about/team"
@@ -90,7 +90,6 @@ export const favoriteEpisodes = [
           "label": "Careers",
           "url": "/about/careers"
         }
-      */}
       ]
     },
     {
@@ -102,11 +101,11 @@ export const favoriteEpisodes = [
         },
         {
           "label": "Contact Us",
-          "url": "/contact-us"
+          "url": "/support/contact-us"
         },
         {
           "label": "FAQ",
-          "url": "/Home"
+          "url": "/support/faq"
         }
       ]
     },
