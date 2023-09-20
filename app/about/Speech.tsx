@@ -41,6 +41,8 @@ const Speech = () => {
                     </p>
                     <p>
                     With gratitude,
+                    </p>
+                    <
                     Bhekithemba Simelane
                     </p>
                 </div>
