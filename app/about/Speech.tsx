@@ -28,16 +28,16 @@ const Speech = () => {
                     </p>
                     <br />
                     <p>
-                    But we can't embark on this journey alone. We need your support to make this vision a reality. Your contribution will directly fuel the growth of our platform, enabling us to reach more people, spread awareness about the SDGs, and inspire positive change in the world.  
+                    But we can not embark on this journey alone. We need your support to make this vision a reality. Your contribution will directly fuel the growth of our platform, enabling us to reach more people, spread awareness about the SDGs, and inspire positive change in the world.  
                     </p>
                     <br />
                     <p>
-                    Together, let's carve out pathways to progress, championing the SDGs and paving the way for a sustainable and prosperous future. Every step we take on this journey is a step towards a better world - a world where sustainability isn't just a goal, but a way of life.
+                    Together, let us carve out pathways to progress, championing the SDGs and paving the way for a sustainable and prosperous future. Every step we take on this journey is a step towards a better world - a world where sustainability is not just a goal, but a way of life.
                     </p>
                     <br />
                     <p>
                     Thank you for being a part of our eco-driven community, and for supporting us on this exciting venture. Your support means the world to us, and together, we can create a lasting impact.
-                    Onward towards a sustainable tomorrow!
+                    Onward towards a sustainable tomorrow.
                     </p>
                     <p>
                     With gratitude,
