@@ -22,7 +22,7 @@ const Speech = () => {
                     </p>
                     <br />
                     <p>
-                    By integrating these new features, we aspire to foster a vibrant community of change-makers, providing a platform for dialogue, sharing of ideas, and collective action towards achieving the SDGs. The Unami Ecofusion Podcast Blog will serve as a hub for inspiration, knowledge-sharing, and a call to action, as we tackle pressing sustainability challenges together.
+                    By integrating  new features, we aspire to foster a vibrant community of change-makers, providing a platform for dialogue, sharing of ideas, and collective action towards achieving the SDGs. The Unami Ecofusion Podcast Blog will serve as a hub for inspiration, knowledge-sharing, and a call to action, as we tackle pressing sustainability challenges together.
                     </p>
                     <br />
                     <p>

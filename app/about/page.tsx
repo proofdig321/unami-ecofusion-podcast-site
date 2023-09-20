@@ -19,9 +19,9 @@ const Aboutpage = () => {
       <div>
         <Loader />
         <AboutHero />
+        <Speech />
         <MediaLink />
         <Stats />
-        <Speech />
       </div>
     </ClientOnly>
 
