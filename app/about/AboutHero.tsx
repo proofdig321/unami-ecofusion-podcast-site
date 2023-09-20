@@ -13,7 +13,7 @@ const AboutHero = () => {
                 <Heading title='About us' color='text-white' center />
             </div>
         </div>
-        <YoutubeEmbed />
+        {/*<YoutubeEmbed /> */}
     </div>
 
   )
