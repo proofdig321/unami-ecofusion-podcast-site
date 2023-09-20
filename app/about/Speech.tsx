@@ -11,9 +11,7 @@ const Speech = () => {
         <Container>
             <div className='flex flex-col md:flex-row justify-between items-center gap-8'>
                 <div className='w-full md:w-1/2'>
-                    <Heading title='Title: "Pathways to Progress: SDG-Driven Growth of Unami Ecofusion Podcast Blog"
-
-                        'color='text-black' />
+                    <Heading title="Pathways to Progress: SDG-Driven Growth of Unami Ecofusion Podcast Blog" color={'text-black'}/>
                     <br />
                     <p>
                     We are thrilled to share our journey towards a more sustainable and conscious world through the Unami Ecofusion Podcast Blog. Our passion for environmental sustainability, eco-conscious travel, and all things green has driven us to create a platform that not only educates but also inspires change.
@@ -42,7 +40,8 @@ const Speech = () => {
                     <p>
                     With gratitude,
                     </p>
-                    <
+                    <br />
+                    <p>
                     Bhekithemba Simelane
                     </p>
                 </div>
