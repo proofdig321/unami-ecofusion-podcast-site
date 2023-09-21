@@ -51,7 +51,7 @@ const Speech = () => {
                 </div>
 
                 <div className='w-full md:w-1/2'>
-                    <Image src='https://images.unsplash.com/photo-1589903308904-1010c2294adc?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80'
+                    <Image src='https://res.cloudinary.com/day0vect8/image/upload/v1695256099/ImagineWinning_2_cx00jy.png'
                         width={500} height={500}
                         className='w-full md:rounded-full'
                         alt='speech' />
