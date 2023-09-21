@@ -45,7 +45,7 @@ export const categories = [
 
 export const hostData = [
     {
-        image: 'https://photos.google.com/photo/AF1QipPVLpWvOQIZemcDNSaRRGY-AXfC8A224MhTIwoT', name: 'Bheki Simelane'
+        image: 'https://res.cloudinary.com/day0vect8/image/upload/v1695256123/ImagineWinning_lxlfsr.png', name: 'Bheki Simelane'
 }
 ]
 
