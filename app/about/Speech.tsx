@@ -41,12 +41,15 @@ const Speech = () => {
                     Thank you for being a part of our eco-driven community, and for supporting us on this exciting venture. Your support means the world to us, and together, we can create a lasting impact.
                     Onward towards a sustainable tomorrow.
                     </p>
+                    <br />
+                    <br />
+                    <p>To make a donation, click <a href="https://gogetfunding.com/pathways-to-progress-sdg-driven-growth-of-unami-ecofusion-podcast-blog/">here</a> to visit GoGetFunding.
+                    </p>
+                    <br />
                     <p>
                     With gratitude,
                     </p>
                     <br />
-                    <p>To make a donation, click <a href="https://gogetfunding.com/pathways-to-progress-sdg-driven-growth-of-unami-ecofusion-podcast-blog/">here</a> to visit GoGetFunding.</p>
-
                     <p>
                     Bhekithemba Simelane
                     </p>
