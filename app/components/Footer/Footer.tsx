@@ -15,7 +15,7 @@ const Footer = () => {
           <div className=" w-full sm:w-full md:w-[340px]">
             <Logo />
             <p className="">
-            Welcome to Unami EcoFusion Podcast Blog, where we explore the fascinating realms of lifestyle, art, music, travel, culture, fashion, and food. Join us on a sensory journey as we delve into diverse topics that ignite your passion and expand your horizons.
+            At Unami Ecofusion, we believe in the power of knowledge and the potential for change that lies within each of us. Our mission is to amplify the voices advocating for a better world, highlighting the United Nations Sustainable Development Goals (SDGs) as our guiding light. These goals are not just aspirations but a blueprint for a world where people, planet, and prosperity coexist harmoniously.
             </p>
           </div>
             {
@@ -42,7 +42,7 @@ const Footer = () => {
         <br />
         <div className="flex justify-between items-center gap-4 flex-col md:flex-row py">
           <p>
-            © 2023 Unami EcoFusion Blog All rights reserved
+            © 2023 Unami EcoFusion Podcast Blog All rights reserved
           </p>
           <Followus />
         </div>
