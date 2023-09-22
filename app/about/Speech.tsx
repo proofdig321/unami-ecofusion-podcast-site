@@ -45,6 +45,8 @@ const Speech = () => {
                     With gratitude,
                     </p>
                     <br />
+                    <p>To make a donation, click <a href="https://gogetfunding.com/pathways-to-progress-sdg-driven-growth-of-unami-ecofusion-podcast-blog/">here</a> to visit GoGetFunding.</p>
+
                     <p>
                     Bhekithemba Simelane
                     </p>
