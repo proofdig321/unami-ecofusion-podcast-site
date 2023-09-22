@@ -190,7 +190,7 @@ export const favoriteEpisodes = [
   export const contactInfo = [
     {
       type: "Email",
-      value: "unamipodcast@gmail.com",
+      value: "admin@unamipodcast.site",
       icon: <FaEnvelope />
     },
     {
